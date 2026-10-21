@@ -248,6 +248,14 @@
   }
 
   document.addEventListener('click', event => {
+    const cardReviews = event.target.closest('.community-card-reviews');
+    if (cardReviews && !event.target.closest('a')) {
+      const opiniones = document.getElementById('opiniones');
+      if (opiniones) {
+        opiniones.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+
     const categoryLink = event.target.closest('a[href^="#equipos/"]');
     if (categoryLink && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
       event.preventDefault();
