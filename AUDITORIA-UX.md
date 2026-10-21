@@ -62,3 +62,13 @@ No modificar ni sobrescribir la planilla fuente, no agregar márgenes, no altera
 - **Modo archivo**: se evita reintentar por red cada minuto cuando se abre con `file://`.
 
 Los cambios se encuentran en la rama de mejoras; **no están desplegados**. El QA visual con capturas sigue pendiente y no debe darse por aprobado a partir de tests de código.
+
+## Dirección editorial plana — revisión solicitada sobre capturas (21/10/2026)
+
+Se eliminaron los números **ornamentales** del listado de reparaciones y de las tres etapas del recorrido comercial. Los nombres de los modelos, capacidades, cantidades funcionales y precios se conservan.
+
+Se sustituyeron los recuadros oscuros anidados de «Explorá / Seleccioná / Consultá» por columnas con separación mediante reglas finas y espacios. El formulario de reparación pasó de un bloque oscuro sobre fondo blanco a un formulario limpio y legible, conservando validaciones y contacto por WhatsApp. Los servicios mantienen botones accesibles y responsivos sin fondos de hover que simulan una tarjeta.
+
+Se fijó un sistema editorial para catálogo, categorías, ofertas, comunidad, banner de usados y CTA final: una unidad visual por producto, fotos sin bordes internos, secciones separadas por ritmo tipográfico y líneas, no contenedores de contenedores.
+
+La implementación está en `assets/refinement.css`, cargado **después** del CSS previo. Mantiene intacto el CSS legado para facilitar el QA y la reversión, sin alterar la lógica de precios ni el catálogo. Antes de producción requiere verificar capturas reales en escritorio y móvil.

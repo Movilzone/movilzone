@@ -492,10 +492,10 @@
   window.addEventListener('hashchange', () => route(true));
 
   const services = ['Módulo y pantalla', 'Batería', 'Flex de carga', 'Cámaras y tapa', 'Software', 'Reparación de placa', 'PC y notebooks', 'Consolas y joysticks'];
-  $('services').innerHTML = services.map((s, i) => `
-    <button class="service-row" data-repair="${escape(s)}">
-      <span><small class="service-number">${String(i + 1).padStart(2, '0')}</small><strong>${escape(s)}</strong></span>
-      <i aria-hidden="true">↗</i>
+  $('services').innerHTML = services.map(s => `
+    <button class="service-row" type="button" data-repair="${escape(s)}" aria-label="Consultar por ${escape(s)}">
+      <strong>${escape(s)}</strong>
+      <span class="service-arrow" aria-hidden="true">↗</span>
     </button>
   `).join('');
 
