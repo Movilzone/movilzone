@@ -228,3 +228,31 @@ body{font-family:Arial,Helvetica,sans-serif}.shell{max-width:1240px}.topline{bac
 .floating-contact {
   animation: whatsapp-soft-pulse 2.2s infinite;
 }
+
+
+/* Información Legal y Aviso al Consumidor */
+.legal-notice {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-size: 11px;
+  line-height: 1.65;
+  color: var(--muted);
+  text-align: left;
+  max-width: 900px;
+  margin-inline: auto;
+}
+.legal-notice p {
+  margin: 0 0 10px;
+}
+.legal-notice strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+.legal-notice a {
+  color: var(--blue);
+  text-decoration: underline;
+}
+.legal-notice a:hover {
+  color: #094bc5;
+}
