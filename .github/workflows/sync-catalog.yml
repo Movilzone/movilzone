@@ -1,0 +1,29 @@
+name: Sincronizar Precios desde Google Sheets
+
+on:
+  schedule:
+    - cron: '30 12,17,21 * * 1-6' # 09:30, 14:00 y 18:30 hs de Lunes a Sábados
+  workflow_dispatch: # Botón manual para actualizar en el momento
+
+permissions:
+  contents: write
+
+jobs:
+  sync-catalog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Sincronizar con Google Sheets
+        run: python scripts/sync-catalog.py
+      - name: Guardar cambios si hay nuevos precios
+        run: |
+          git config user.name "MovilZone Bot"
+          git config user.email "bot@movilzone.com"
+          git add data/
+          git diff --staged --quiet || (git commit -m "🤖 Actualización automática de precios desde Google Sheets" && git push)
