@@ -1,4 +1,4 @@
-﻿{
+{
   "products": [
     {
       "id": "iphone-15-128gb-usado-unidades-seleccionadas",
@@ -13,7 +13,7 @@
       "availability": "consultar",
       "offer": true,
       "image": "/assets/products/iphone-15.webp",
-      "publicNotes": "Oferta sujeta a disponibilidad. Consultáá condiciones y estado de cada equipo. Unidades seleccionadas.",
+      "publicNotes": "Oferta sujeta a disponibilidad. Consultá condiciones y estado de cada equipo. Unidades seleccionadas.",
       "priceARS": null,
       "installments3": null,
       "installments6": null
@@ -31,7 +31,7 @@
       "availability": "consultar",
       "offer": true,
       "image": "/assets/products/iphone-16.webp",
-      "publicNotes": "Oferta sujeta a disponibilidad. Consultáá condiciones y estado de cada equipo. Unidades seleccionadas.",
+      "publicNotes": "Oferta sujeta a disponibilidad. Consultá condiciones y estado de cada equipo. Unidades seleccionadas.",
       "priceARS": null,
       "installments3": null,
       "installments6": null
@@ -553,7 +553,7 @@
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-17-pro.webp",
-      "publicNotes": "Condición AS IS. Consultáá detalles del equipo antes de comprar.",
+      "publicNotes": "Condición AS IS. Consultá detalles del equipo antes de comprar.",
       "priceARS": 1848600,
       "installments3": 844160,
       "installments6": 486465
@@ -571,7 +571,7 @@
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-17-pro.webp",
-      "publicNotes": "Condición AS IS. Consultáá detalles del equipo antes de comprar.",
+      "publicNotes": "Condición AS IS. Consultá detalles del equipo antes de comprar.",
       "priceARS": 1998700,
       "installments3": 912703,
       "installments6": 525964
@@ -607,7 +607,7 @@
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-14.webp",
-      "publicNotes": "Equipo activado. Consultáá condición y garantía.",
+      "publicNotes": "Equipo activado. Consultá condición y garantía.",
       "priceARS": 916400,
       "installments3": 418473,
       "installments6": 241154
@@ -625,7 +625,7 @@
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-15.webp",
-      "publicNotes": "Equipo activado. Consultáá condición y garantía.",
+      "publicNotes": "Equipo activado. Consultá condición y garantía.",
       "priceARS": 1232400,
       "installments3": 562773,
       "installments6": 324310
@@ -2552,6 +2552,7 @@
     }
   ],
   "sourceLabel": "Actualizada · 20/10/2026 · 12:52",
-  "checkedAt": "2026-10-21T13:17:19.383Z",
-  "live": true
+  "checkedAt": "2026-10-21T14:31:17.361Z",
+  "live": false,
+  "sourceMode": "scheduled-sheet"
 }

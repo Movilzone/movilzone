@@ -1,1 +1,6 @@
-{"whatsapp": "5492236606864", "instagram": "https://www.instagram.com/movilzone.mdp/", "catalogEndpoint": "/api/catalog", "catalogEnabled": false}
+{
+  "whatsapp": "5492236606864",
+  "instagram": "https://www.instagram.com/movilzone.mdp/",
+  "catalogEndpoint": "data/catalog.json",
+  "catalogEnabled": true
+}

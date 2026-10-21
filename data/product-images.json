@@ -1,8 +1,8 @@
 {
   "iPhone 17 Pro Max": {
+    "orange": "/assets/products/colors/iphone-17-pro-max-orange.webp",
     "silver": "/assets/products/colors/iphone-17-pro-max-silver.webp",
-    "blue": "/assets/products/colors/iphone-17-pro-max-blue.webp",
-    "orange": "/assets/products/colors/iphone-17-pro-max-orange.webp"
+    "blue": "/assets/products/colors/iphone-17-pro-max-blue.webp"
   },
   "iPhone 15": {
     "black": "/assets/products/colors/iphone-15-black.webp",

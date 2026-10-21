@@ -1,0 +1,15 @@
+import {readFile,writeFile} from 'node:fs/promises';
+import {liveCatalog} from './live-catalog.mjs';
+const baseline=JSON.parse((await readFile('data/catalog.json','utf8')).replace(/^\uFEFF/,''));
+const images=JSON.parse(await readFile('data/model-images.json','utf8'));
+const csv=await readFile(process.argv[2],'utf8');
+const data=liveCatalog(csv,baseline,images);
+data.live=false;data.sourceMode="scheduled-sheet";
+if(data.products.some(p=>!Number.isFinite(p.price)||p.price<=0))throw Error('Precio inválido');
+const changed=JSON.stringify(data.products)!==JSON.stringify(baseline.products)||data.sourceLabel!==baseline.sourceLabel;
+if(changed)await writeFile('data/catalog.json',JSON.stringify(data,null,2)+'\n');
+const current=changed?data:baseline;
+const colors=JSON.parse((await readFile('data/product-images.json','utf8')).replace(/^\uFEFF/,''));
+const safe=v=>JSON.stringify(v).replace(/</g,'\\u003c');
+await writeFile('data/catalog-fallback.js','// Respaldo generado desde la lista pública de venta.\nwindow.MZ_STATIC_CATALOG='+safe(current)+';\nwindow.MZ_STATIC_IMAGES='+safe(colors)+';\n');
+console.log(JSON.stringify({changed,products:data.products.length,sourceLabel:data.sourceLabel,offers:data.products.filter(p=>p.offer).map(p=>({model:p.model,price:p.price,state:p.state}))}));
