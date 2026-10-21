@@ -380,7 +380,7 @@
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
     try {
-      const r = await fetch(url, { signal: controller.signal });
+      const r = await fetch(url, { signal: controller.signal, cache: 'no-cache' });
       if (!r.ok) throw new Error('No disponible');
       return await r.json();
     } finally {
@@ -398,6 +398,7 @@
       } else {
         try {
           config = { ...config, ...(await json('config.json').catch(() => ({}))) };
+          colorImages = await json('data/product-images.json').catch(() => ({}));
           if (config.catalogEnabled && config.catalogEndpoint) {
             data = await json(config.catalogEndpoint).catch(() => null);
           }
@@ -425,7 +426,7 @@
       }
 
       if ($('catalog-source')) {
-        $('catalog-source').textContent = 'Precios de referencia · Disponibilidad y stock a confirmar por WhatsApp o en el local.';
+        $('catalog-source').textContent = `${data.sourceLabel || 'Lista de precios'} · Disponibilidad y stock a confirmar por WhatsApp.`;
       }
 
       products = data.products.filter(p => p && typeof p.id === 'string' && typeof p.model === 'string' && typeof p.price === 'number' && Number.isFinite(p.price) && p.price > 0 && ['USD', 'ARS'].includes(p.currency));
@@ -435,5 +436,24 @@
     }
     render();
     route(false);
+    if (!window.MZ_PREVIEW) {
+      let refreshing=false;
+      const refresh=async()=>{
+        if(refreshing || document.hidden)return;
+        refreshing=true;
+        try{
+          const data=await json(config.catalogEndpoint || 'data/catalog.json');
+          if(!Array.isArray(data.products)||!data.products.length)throw Error('Catálogo inválido');
+          if(JSON.stringify(products)!==JSON.stringify(data.products)){
+            products=data.products;loadFailed=false;render();
+            if($('product-dialog').open)route(false);
+          }
+          $('catalog-source').textContent=`${data.sourceLabel || 'Lista de precios'} · Disponibilidad y stock a confirmar por WhatsApp.`;
+        }catch{$('catalog-source').textContent='No pudimos comprobar la última lista. Precios de referencia: confirmalos por WhatsApp.';}
+        finally{refreshing=false;}
+      };
+      setInterval(refresh,60000);
+      document.addEventListener('visibilitychange',()=>{if(!document.hidden)refresh();});
+    }
   })();
 })();
