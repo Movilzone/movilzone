@@ -361,7 +361,7 @@
       if (btn.dataset.close) $(btn.dataset.close).close();
     }
 
-    if (event.target.closest('nav a,nav button[data-contact]')) {
+    if (event.target.closest('nav a,nav button[data-contact],nav button[data-quote-open]')) {
       $('main-nav').classList.remove('open');
       $('menu-toggle').setAttribute('aria-expanded', 'false');
       $('menu-toggle').setAttribute('aria-label', 'Abrir menú');
