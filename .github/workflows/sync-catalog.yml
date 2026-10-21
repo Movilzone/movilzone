@@ -2,15 +2,29 @@ name: Sincronizar Precios desde Google Sheets
 
 on:
   schedule:
-    - cron: '30 12,17,21 * * 1-6' # 09:30, 14:00 y 18:30 hs de Lunes a Sábados
-  workflow_dispatch: # Botón manual para actualizar en el momento
+    - cron: '30 12,16,20 * * *' # 09:30, 13:30 y 17:30, Argentina (UTC-3)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sync-catalog.yml'
+      - 'scripts/**'
+      - 'data/model-images.json'
+      - 'data/product-images.json'
+      - 'config.json'
+      - 'tests/**'
 
 permissions:
   contents: write
 
+concurrency:
+  group: sync-catalog
+  cancel-in-progress: false
+
 jobs:
   sync-catalog:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -19,11 +33,19 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Sincronizar con Google Sheets
+      - name: Probar lectura y actualización del catálogo
+        run: node --test tests/live-catalog.test.mjs tests/catalog-refresh.test.mjs
+      - name: Leer precios finales de Hoja 3 sin modificar la planilla
         run: python scripts/sync-catalog.py
-      - name: Guardar cambios si hay nuevos precios
+      - name: Verificar respaldo e imágenes
+        run: node --test tests/assets.test.mjs
+      - name: Guardar catálogo para su lectura directa desde la web
         run: |
           git config user.name "MovilZone Bot"
           git config user.email "bot@movilzone.com"
-          git add data/
-          git diff --staged --quiet || (git commit -m "🤖 Actualización automática de precios desde Google Sheets" && git push)
+          git add data/catalog.json data/catalog-fallback.js
+          if ! git diff --staged --quiet; then
+            git commit -m "Actualizar catálogo desde LISTA EQUIPOS"
+            git pull --rebase origin main
+            git push origin HEAD:main
+          fi

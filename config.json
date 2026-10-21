@@ -1,6 +1,7 @@
 {
   "whatsapp": "5492236606864",
   "instagram": "https://www.instagram.com/movilzone.mdp/",
-  "catalogEndpoint": "data/catalog.json",
-  "catalogEnabled": true
+  "catalogEndpoint": "https://raw.githubusercontent.com/Movilzone/movilzone/main/data/catalog.json",
+  "catalogEnabled": true,
+  "colorImagesEndpoint": "https://raw.githubusercontent.com/Movilzone/movilzone/main/data/product-images.json"
 }

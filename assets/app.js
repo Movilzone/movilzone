@@ -397,7 +397,9 @@
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
     try {
-      const r = await fetch(url, { signal: controller.signal, cache: 'no-cache' });
+      const freshUrl = new URL(url, location.href);
+      freshUrl.searchParams.set('_mz', Math.floor(Date.now() / 60000));
+      const r = await fetch(freshUrl.href, { signal: controller.signal, cache: 'no-cache' });
       if (!r.ok) throw new Error('No disponible');
       return await r.json();
     } finally {
@@ -407,7 +409,7 @@
 
   (async () => {
     try {
-      let data = null;
+      let data = null, usingFallback = false;
       if (window.MZ_PREVIEW) {
         config = { ...config, ...window.MZ_PREVIEW.config };
         data = window.MZ_PREVIEW.catalog;
@@ -415,11 +417,12 @@
       } else {
         try {
           config = { ...config, ...(await json('config.json').catch(() => ({}))) };
-          colorImages = await json('data/product-images.json').catch(() => ({}));
+          colorImages = await json(config.colorImagesEndpoint || 'data/product-images.json').catch(() => window.MZ_STATIC_IMAGES || {});
           if (config.catalogEnabled && config.catalogEndpoint) {
             data = await json(config.catalogEndpoint).catch(() => null);
           }
           if (!data) {
+            usingFallback = true;
             [data, colorImages] = await Promise.all([
               json('data/catalog.json').catch(() => null),
               json('data/product-images.json').catch(() => ({}))
@@ -427,6 +430,7 @@
           }
         } catch {
           // Fallback a objetos estáticos precargados
+          usingFallback = true;
           data = window.MZ_STATIC_CATALOG;
           colorImages = window.MZ_STATIC_IMAGES || {};
         }
@@ -435,6 +439,7 @@
       // Si fetch no devolvió datos (por ejemplo, en protocolo local file://), usar el fallback garantizado
       if (!data || !Array.isArray(data.products)) {
         if (window.MZ_STATIC_CATALOG && Array.isArray(window.MZ_STATIC_CATALOG.products)) {
+          usingFallback = true;
           data = window.MZ_STATIC_CATALOG;
           colorImages = window.MZ_STATIC_IMAGES || {};
         } else {
@@ -443,7 +448,7 @@
       }
 
       if ($('catalog-source')) {
-        $('catalog-source').textContent = `${data.sourceLabel || 'Lista de precios'} · Disponibilidad y stock a confirmar por WhatsApp.`;
+        $('catalog-source').textContent = `${data.sourceLabel || 'Lista de precios'} · ${usingFallback ? 'No pudimos comprobar la última lista; mostramos el respaldo. ' : ''}Disponibilidad y stock a confirmar por WhatsApp.`;
       }
 
       products = data.products.filter(p => p && typeof p.id === 'string' && typeof p.model === 'string' && typeof p.price === 'number' && Number.isFinite(p.price) && p.price > 0 && ['USD', 'ARS'].includes(p.currency));
@@ -459,9 +464,14 @@
         if(refreshing || document.hidden)return;
         refreshing=true;
         try{
-          const data=await json(config.catalogEndpoint || 'data/catalog.json');
+          const [data, refreshedImages]=await Promise.all([
+            json(config.catalogEndpoint || 'data/catalog.json'),
+            json(config.colorImagesEndpoint || 'data/product-images.json').catch(()=>null)
+          ]);
           if(!Array.isArray(data.products)||!data.products.length)throw Error('Catálogo inválido');
-          if(JSON.stringify(products)!==JSON.stringify(data.products)){
+          const imagesChanged=refreshedImages && JSON.stringify(colorImages)!==JSON.stringify(refreshedImages);
+          if(refreshedImages)colorImages=refreshedImages;
+          if(imagesChanged || JSON.stringify(products)!==JSON.stringify(data.products)){
             products=data.products;loadFailed=false;render();
             if($('product-dialog').open)route(false);
           }
