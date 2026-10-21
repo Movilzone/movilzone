@@ -75,3 +75,49 @@ body{font-family:Arial,Helvetica,sans-serif}.shell{max-width:1240px}.topline{bac
 .dialog-actions .quote-add-detail{width:auto;min-width:145px;flex:1;margin-top:0}
 @media(max-width:800px){.quote-floating{left:12px;bottom:86px;padding:10px 14px}.quote-dialog{padding:28px 19px 24px}.quote-actions{flex-direction:column;align-items:stretch}.quote-actions .button{min-width:0;width:100%;flex:none}.quote-actions .text-link{justify-content:center}.quote-item{flex-direction:column;gap:3px}.quote-remove{align-self:flex-end}}
 @media(prefers-reduced-motion:reduce){.quote-add{transition:none}}
+
+
+/* Etapa II: recorrido comercial editorial sin introducir dependencias ni imágenes externas. */
+.hero-stage{position:relative;isolation:isolate;background:radial-gradient(ellipse 75% 85% at 95% 20%,#162e56 0%,transparent 74%),radial-gradient(ellipse 70% 70% at 5% 100%,#182b45 0%,transparent 75%),#0b1019}
+.hero-stage:before{content:"";position:absolute;inset:0;pointer-events:none;z-index:-1;background-image:linear-gradient(#a2bdd711 1px,transparent 1px),linear-gradient(90deg,#a2bdd711 1px,transparent 1px);background-size:65px 65px;mask-image:linear-gradient(90deg,transparent 0%,#000 70%,#000 100%);opacity:.46}
+.hero-copy{position:relative}.hero-description{max-width:520px}.hero h1{text-wrap:balance}
+.brand-card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.brand-card:hover{box-shadow:0 18px 35px #0a1d3d19;border-color:#bfd2ef}
+.product-card{transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.product-card:hover{border-color:#b8cdef;box-shadow:0 15px 40px #0e315014}
+.product-card .quote-add{border-radius:10px;letter-spacing:.01em}
+.catalog-toolbar{position:relative}
+#catalogo{scroll-margin-top:115px}
+.search-wrap:focus-within{border-color:#8cb6fb;box-shadow:0 0 0 3px #4a8ff21c}
+.product-share{display:flex;flex-direction:column;gap:5px;margin-top:18px}
+.product-share-button{align-self:flex-start;min-height:44px;padding:9px 0;border:0;background:transparent;color:#1656b8;font-size:13px;font-weight:700}
+.product-share-button:hover{text-decoration:underline}
+.product-share-feedback{min-height:1.1em;font-size:12px;color:#405a79}
+.product-share-url{display:block;width:100%;margin-top:6px;padding:12px;border:1px solid #b8cae4;border-radius:8px;background:#f5f8ff;font-size:13px}
+.product-share-url[hidden]{display:none!important}
+.journey{padding-block:82px;background:#0b1422;color:#f4f7fd;position:relative;overflow:hidden}
+.journey:before{content:"";position:absolute;right:-180px;top:-230px;width:620px;height:620px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,#286fdf30,transparent 70%)}
+.journey-shell{position:relative}.journey-head{display:flex;align-items:end;justify-content:space-between;gap:50px;margin-bottom:48px}
+.journey .eyebrow{color:#9fb9e4}.journey h2{font-size:clamp(35px,4.5vw,57px);line-height:1.08;letter-spacing:-.05em}
+.journey h2 em{color:#8cb9ff;font-style:normal}.journey-head>p{max-width:350px;line-height:1.85;color:#b0bed3;font-size:14px}
+.journey-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;list-style:none;margin:0;padding:0}
+.journey-step{position:relative;padding:28px 26px 32px;border:1px solid #33445b;background:#162235b8;border-radius:18px}
+.journey-number{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;margin-bottom:30px;background:#203959;border:1px solid #426d9c;border-radius:14px;color:#a7c9ff;font-size:15px;font-weight:800;font-variant-numeric:tabular-nums}
+.journey-step h3{color:#fff;font-size:27px;letter-spacing:-.04em;margin-bottom:12px}.journey-step p{color:#b6c5d9;font-size:14px;line-height:1.8;max-width:33ch}
+.journey-actions{display:flex;gap:24px;align-items:center;flex-wrap:wrap;margin-top:34px}
+.journey-actions p{font-size:12px;color:#9caec5}.journey-actions .button{background:#eaf2ff;color:#12396d;border-radius:10px}
+.journey-actions .button:hover{background:#fff}
+@media(max-width:1050px) and (min-width:801px){.header-inner{gap:12px}nav{gap:10px}.quote-nav-button{padding:9px;font-size:12px}}
+@media(max-width:800px){
+ .filters{flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;scroll-snap-type:x proximity;overscroll-behavior-inline:contain;scrollbar-width:thin;padding-bottom:12px;margin-inline:-24px;padding-inline:24px}
+ .filters button{flex:0 0 auto;scroll-snap-align:start;white-space:nowrap}
+ .journey{padding-block:60px}.journey-head{display:block;margin-bottom:26px}.journey-head>p{max-width:560px;margin-top:20px}
+ .journey-steps{grid-template-columns:1fr;gap:12px}.journey-step{padding:20px 22px}.journey-number{margin-bottom:15px}
+ .journey-actions{align-items:stretch}.journey-actions .button{width:100%}
+}
+@media(max-width:560px){
+ .hero-stage:before{background-size:44px 44px}
+ .filters{margin-inline:-16px;padding-inline:16px}
+ .journey-step h3{font-size:24px}.journey-step p{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){.brand-card,.product-card{transition:none}.brand-card:hover,.product-card:hover{transform:none}}

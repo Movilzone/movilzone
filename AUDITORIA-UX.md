@@ -51,3 +51,14 @@ En el commit base auditado había **138 variantes de 68 modelos**, 2 entradas ma
 No modificar ni sobrescribir la planilla fuente, no agregar márgenes, no alterar descuentos, no prometer disponibilidad, no convertir la consulta en una venta cobrada, no cambiar logos originales y no publicar ni fusionar la rama sin QA visual.
 
 **Estado de esta auditoría:** código y estructura revisados; PR creado; pruebas automáticas aprobadas al momento de elaborar el informe. La verificación visual, comercial y del despliegue sigue pendiente.
+
+## Etapa II — navegación y descubrimiento (21/10/2026)
+
+- **Búsqueda**: sugerencias nativas a partir de los modelos del catálogo, actualizadas al refrescar los datos.
+- **Fichas compartibles**: botón nativo de compartir, portapapeles y campo de selección manual si faltan permisos.
+- **Flujo comercial**: sección visible que explica en tres pasos la elección, selección y consulta (sin prometer stock ni pagos).
+- **Móvil**: filtros desplazables horizontalmente para no ocupar múltiples filas de pantalla.
+- **SEO local**: URL canónica, imagen Open Graph absoluta, metadatos en español, URL estructurada del comercio y sitemap básico.
+- **Modo archivo**: se evita reintentar por red cada minuto cuando se abre con `file://`.
+
+Los cambios se encuentran en la rama de mejoras; **no están desplegados**. El QA visual con capturas sigue pendiente y no debe darse por aprobado a partir de tests de código.

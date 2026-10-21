@@ -24,6 +24,10 @@
   const pesos = n => '$ ' + new Intl.NumberFormat('es-AR', { maximumFractionDigits: 0 }).format(n);
   const extraPrice = p => `${p.regularPrice ? `<p class="regular-price">Habitual: ${money({ ...p, price: p.regularPrice })}</p>` : ''}${p.priceARS ? `<p class="ars-price">En pesos: ${pesos(p.priceARS)}</p>` : ''}`;
   const specs = p => [p.capacity, p.ram ? 'RAM ' + p.ram : '', p.color].filter(Boolean).join(' · ');
+  function updateSuggestions() {
+    const models = [...new Set(products.map(p => p.model))].sort((a, b) => a.localeCompare(b, 'es', { numeric: true }));
+    $('model-suggestions').innerHTML = models.map(model => `<option value="${escape(model)}"></option>`).join('');
+  }
 
   const safeImage = value => {
     if (typeof value !== 'string') return '';
@@ -92,6 +96,9 @@
     const count = entries.length;
     document.querySelectorAll('[data-quote-count]').forEach(el => { el.textContent = String(count); });
     $('quote-floating').hidden = !count;
+    document.querySelectorAll('[data-quote-open]').forEach(button => {
+      button.setAttribute('aria-label', 'Mi selección: ' + count + (count === 1 ? ' equipo' : ' equipos'));
+    });
     $('quote-items').innerHTML = count ? entries.map(item => {
       const p = item.p;
       const details = [p.capacity, p.ram ? 'RAM ' + p.ram : '', item.color || p.color, stateLabel[p.state] || p.state].filter(Boolean).join(' · ');
@@ -231,6 +238,38 @@
     refreshQuote();
   }
 
+
+  async function shareProduct(id, color = '') {
+    const p = products.find(item => item.id === id);
+    if (!p) return;
+    const url = new URL(window.location.href);
+    url.hash = 'producto/' + id + (color ? '/' + encodeURIComponent(color) : '');
+    const title = [p.model, p.capacity, color || p.color].filter(Boolean).join(' · ');
+    const feedback = $('product-share-feedback');
+    const fallback = $('product-share-url');
+    fallback.hidden = true;
+    if (typeof navigator.share === 'function') {
+      try {
+        await navigator.share({ title: title + ' | Móvil Zone', text: 'Consultá disponibilidad y precio final con Móvil Zone.', url: url.href });
+        feedback.textContent = 'Ficha compartida.';
+        return;
+      } catch (error) {
+        if (error && error.name === 'AbortError') return;
+      }
+    }
+    try {
+      if (!navigator.clipboard || !navigator.clipboard.writeText) throw new Error('Sin portapapeles');
+      await navigator.clipboard.writeText(url.href);
+      feedback.textContent = 'Enlace copiado. Ya podés compartirlo.';
+    } catch {
+      fallback.value = url.href;
+      fallback.hidden = false;
+      fallback.focus();
+      fallback.select();
+      feedback.textContent = 'Seleccioná el enlace para copiarlo manualmente.';
+    }
+  }
+
   function showProduct(id, selectedColor) {
     const original = products.find(p => p.id === id);
     if (!original) return;
@@ -262,6 +301,12 @@
       <div class="dialog-actions">
         <button type="button" class="quote-add quote-add-detail" data-quote-add="${escape(p.id)}" data-selected-color="${escape(chosen)}">+ Sumar a mi selección</button>
         <button class="button" data-product-contact="${escape(p.id)}" data-selected-color="${escape(chosen)}">Consultar por WhatsApp ↗</button>
+      </div>
+      <div class="product-share">
+        <button type="button" class="product-share-button" data-product-share="${escape(p.id)}" data-selected-color="${escape(chosen)}">Compartir esta ficha <span aria-hidden="true">↗</span></button>
+        <p class="product-share-feedback" id="product-share-feedback" aria-live="polite"></p>
+        <label class="sr-only" for="product-share-url">Enlace de esta ficha</label>
+        <input type="url" class="product-share-url" id="product-share-url" readonly hidden>
       </div>
     `;
 
@@ -328,12 +373,13 @@
       route(true);
     }
 
-    const btn = event.target.closest('[data-contact],[data-product-contact],[data-product-detail],[data-filter],[data-close],[data-quote-open],[data-quote-add],[data-quote-remove]');
+    const btn = event.target.closest('[data-contact],[data-product-contact],[data-product-detail],[data-product-share],[data-filter],[data-close],[data-quote-open],[data-quote-add],[data-quote-remove]');
     if (btn) {
       if (btn.dataset.quoteOpen !== undefined) {
         refreshQuote();
         if (!$('quote-dialog').open) $('quote-dialog').showModal();
       }
+      if (btn.dataset.productShare) shareProduct(btn.dataset.productShare, btn.dataset.selectedColor || '');
       if (btn.dataset.quoteAdd) addQuote(btn.dataset.quoteAdd, btn.dataset.selectedColor || '');
       if (btn.dataset.quoteRemove) removeQuote(btn.dataset.quoteRemove, btn.dataset.selectedColor || '');
       if (btn.dataset.contact !== undefined) contact(btn.dataset.contact);
@@ -542,13 +588,14 @@
 
       products = data.products.filter(p => p && typeof p.id === 'string' && typeof p.model === 'string' && typeof p.price === 'number' && Number.isFinite(p.price) && p.price > 0 && ['USD', 'ARS'].includes(p.currency));
       quoteItems = loadQuote();
+      updateSuggestions();
     } catch {
       loadFailed = true;
       products = [];
     }
     render();
     route(false);
-    if (!window.MZ_PREVIEW) {
+    if (!window.MZ_PREVIEW && location.protocol !== 'file:') {
       let refreshing=false;
       const refresh=async()=>{
         if(refreshing || document.hidden)return;
@@ -557,7 +604,7 @@
           const data=await json(config.catalogEndpoint || 'data/catalog.json');
           if(!Array.isArray(data.products)||!data.products.length)throw Error('Catálogo inválido');
           if(JSON.stringify(products)!==JSON.stringify(data.products)){
-            products=data.products;loadFailed=false;render();
+            products=data.products.filter(p => p && typeof p.id === 'string' && typeof p.model === 'string' && Number.isFinite(p.price) && p.price > 0 && ['USD', 'ARS'].includes(p.currency));loadFailed=false;updateSuggestions();render();
             if($('product-dialog').open)route(false);
           }
           $('catalog-source').textContent=`${data.sourceLabel || 'Lista de precios'} · Disponibilidad y stock a confirmar por WhatsApp.`;

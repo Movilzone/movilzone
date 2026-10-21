@@ -23,3 +23,11 @@ Los cambios deben guardarse en la rama que publica GitHub Pages. La tarea de man
 Pruebas: `node --test tests/*.test.mjs`. Validación de JavaScript: `node --check assets/app.js`.
 
 Logo original: `assets/logo-movil-zone.png`; no redibujarlo. El favicon SVG lo incorpora y aplica un recorte circular transparente. No usar un cuadrado blanco como icono de pestaña.
+
+## Mejoras de experiencia propuestas
+
+La rama de mejoras incorpora **Mi selección**, sugerencias nativas de búsqueda, fichas compartibles por enlace, filtros horizontales en móvil y un recorrido claro de consulta. El enlace individual usa `#producto/<id>/<color>`; no se crean páginas por SKU indexables ni se promete stock.
+
+Se añadió `sitemap.xml` con la URL canónica de la tienda. Los productos y precios siguen dependiendo exclusivamente de la fuente existente de catálogo y de su sincronización: **no modificar manualmente valores para mostrar ofertas**.
+
+Antes de fusionar a `main`, verificar visualmente desktop y móvil, el mensaje enviado a WhatsApp y que los enlaces compartidos abran la variante correcta.
