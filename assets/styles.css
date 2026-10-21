@@ -294,22 +294,47 @@ body{font-family:Arial,Helvetica,sans-serif}.shell{max-width:1240px}.topline{bac
 
 /* Información Legal y Aviso al Consumidor */
 .legal-notice {
-  margin-top: 32px;
-  padding-top: 24px;
+  margin-top: 36px;
+  padding-top: 28px;
   border-top: 1px solid var(--line);
-  font-size: 11px;
-  line-height: 1.65;
-  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+  color: #4b5563;
   text-align: left;
-  max-width: 900px;
-  margin-inline: auto;
+  width: 100%;
+  scroll-margin-top: 120px;
+}
+.legal-notice-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.legal-notice-header h4 {
+  font-size: 13.5px;
+  font-weight: 750;
+  letter-spacing: 0.4px;
+  color: var(--ink);
+  margin: 0;
+}
+.legal-tag {
+  display: inline-block;
+  background: #f1f5f9;
+  color: #334155;
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid var(--line);
 }
 .legal-notice p {
-  margin: 0 0 10px;
+  margin: 0 0 12px;
 }
 .legal-notice strong {
   color: var(--ink);
-  font-weight: 650;
+  font-weight: 700;
 }
 .legal-notice a {
   color: var(--blue);
@@ -317,4 +342,29 @@ body{font-family:Arial,Helvetica,sans-serif}.shell{max-width:1240px}.topline{bac
 }
 .legal-notice a:hover {
   color: #094bc5;
+}
+.footer-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.footer-text strong {
+  font-size: 13px;
+  color: var(--ink);
+}
+.footer-text span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.footer-text small {
+  font-size: 11px;
+  color: var(--muted);
 }
