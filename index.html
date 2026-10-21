@@ -4,27 +4,35 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Movil Zone y Apple Zone en Mar del Plata. Catálogo de celulares, iPhone, MacBook, iPad, AirPods y servicio técnico especializado en Alberti 1797. Consultá por WhatsApp.">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <link rel="canonical" href="https://movilzone.github.io/movilzone/">
+  <link rel="sitemap" type="application/xml" href="https://movilzone.github.io/movilzone/sitemap.xml">
   <meta name="theme-color" content="#0b0d12">
   <title>Movil Zone | Apple Zone — Celulares y servicio técnico en Mar del Plata</title>
   
   <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:url" content="https://movilzone.github.io/movilzone/">
   <meta property="og:title" content="Movil Zone + Apple Zone | Celulares en Mar del Plata">
   <meta property="og:description" content="iPhone, Android y servicio técnico. Explorá equipos, consultá cuotas y escribinos por WhatsApp.">
-  <meta property="og:image" content="assets/logo-movil-zone.png">
+  <meta property="og:image" content="https://movilzone.github.io/movilzone/assets/logo-movil-zone.png">
+  <meta property="og:image:alt" content="Logo original de Móvil Zone">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://movilzone.github.io/movilzone/assets/logo-movil-zone.png">
 
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" sizes="any">
   <link rel="apple-touch-icon" href="assets/logo-movil-zone.png">
   <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="assets/refinement.css">
 
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Store",
     "name": "Movil Zone + Apple Zone",
+    "url": "https://movilzone.github.io/movilzone/",
+    "image": "https://movilzone.github.io/movilzone/assets/logo-movil-zone.png",
     "telephone": "+5492236606864",
-    "image": "assets/logo-movil-zone.png",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Alberti 1797",
@@ -73,6 +81,7 @@
         <a href="#ofertas">Ofertas</a>
         <a href="#servicio-tecnico">Servicio técnico</a>
         <a href="#local">El local</a>
+        <button type="button" class="quote-nav-button" data-quote-open aria-haspopup="dialog" aria-controls="quote-dialog">Mi selección <span data-quote-count>0</span></button>
         <button class="button button-small" data-contact="Hola, estoy viendo la web de Movil Zone y quería hacer una consulta.">WhatsApp <span aria-hidden="true">↗</span></button>
       </nav>
     </div>
@@ -183,7 +192,9 @@
         <div class="search-wrap">
           <span aria-hidden="true">⌕</span>
           <label class="sr-only" for="search">Buscar modelo, capacidad o color</label>
-          <input type="search" id="search" placeholder="Buscá modelo, capacidad o color…" autocomplete="off">
+          <input type="search" id="search" list="model-suggestions" placeholder="Buscá modelo, capacidad o color…" autocomplete="off" aria-describedby="search-help">
+          <datalist id="model-suggestions"></datalist>
+          <span class="sr-only" id="search-help">Escribí el modelo, la capacidad o el color; se muestran resultados automáticamente.</span>
         </div>
         <label class="sort-label">
           <span class="sr-only">Ordenar productos</span>
@@ -197,7 +208,7 @@
       </div>
 
       <!-- Filtros -->
-      <div class="filters" aria-label="Filtrar catálogo">
+      <div class="filters" role="group" aria-label="Filtrar catálogo">
         <button data-filter="all" aria-pressed="true">Todos</button>
         <button data-filter="iphone" aria-pressed="false">Todos los iPhone</button>
         <button data-filter="apple" aria-pressed="false">iPhone nuevos</button>
@@ -257,6 +268,37 @@
         <div class="offers-empty" id="offers-empty">
           <p>Próximamente, nuestras ofertas de equipos.</p>
           <button class="text-link" data-contact="Hola, estoy viendo la sección de ofertas de Movil Zone. ¿Qué ofertas de equipos tienen disponibles?">Consultar ofertas <span aria-hidden="true">↗</span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECORRIDO DE COMPRA: claro, sin pagos en línea ni stock simulado -->
+    <section class="journey section" id="como-comprar" aria-labelledby="journey-title">
+      <div class="shell journey-shell">
+        <div class="journey-head">
+          <div>
+            <p class="eyebrow">ELEGIR ES MÁS FÁCIL</p>
+            <h2 id="journey-title">Encontralo. Consultalo.<br><em>Hacelo simple.</em></h2>
+          </div>
+          <p>No necesitás crear una cuenta. Compará opciones, armá tu consulta y hablá directamente con el local.</p>
+        </div>
+        <div class="journey-steps">
+          <article class="journey-step">
+            <h3>Explorá</h3>
+            <p>Buscá por marca, modelo, capacidad o color. Elegí lo que más te interesa.</p>
+          </article>
+          <article class="journey-step">
+            <h3>Seleccioná</h3>
+            <p>Guardá tus favoritos en Mi selección, sin registrarte ni perder lo que elegiste.</p>
+          </article>
+          <article class="journey-step">
+            <h3>Consultá</h3>
+            <p>Enviá tu selección por WhatsApp. Confirmamos juntos disponibilidad, estado y precio final.</p>
+          </article>
+        </div>
+        <div class="journey-actions">
+          <a class="button" href="#catalogo">Buscar mi próximo equipo <span aria-hidden="true">↗</span></a>
+          <p>Sin pagos ni reservas automáticas. La atención es personalizada.</p>
         </div>
       </div>
     </section>
@@ -404,7 +446,7 @@
         </details>
         <details>
           <summary>¿Cómo consulto por un celular?</summary>
-          <p>Elegí cualquier equipo del catálogo y tocá “Consultar por WhatsApp”. El mensaje se arma solo identificando el modelo, color y capacidad para que te confirmemos disponibilidad y precio al instante.</p>
+          <p>Abrí la ficha de un equipo y tocá “Consultar por WhatsApp”. Si querés preguntar por varios, agregalos a “Mi selección” y enviá una única consulta. Te confirmamos disponibilidad, condiciones y precio final.</p>
         </details>
         <details>
           <summary>¿Puedo acercarme al local?</summary>
@@ -441,6 +483,10 @@
     <small>Mar del Plata · <span id="year"></span></small>
   </footer>
 
+  <button id="quote-floating" class="quote-floating" type="button" data-quote-open aria-haspopup="dialog" aria-controls="quote-dialog" aria-label="Abrir mi selección de equipos" hidden>
+    <span aria-hidden="true">＋</span> Mi selección <span data-quote-count>0</span>
+  </button>
+
   <!-- BOTÓN FLOTANTE WHATSAPP -->
   <button class="floating-contact" aria-label="Consultar por WhatsApp" data-contact="Hola, estoy viendo la web de Movil Zone. Quería hacer una consulta.">
     <svg class="channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7a8.5 8.5 0 1 1 16.1-4.1Z"/><path d="M8 7.5c.6-.3 1 1.8 1.5 2.4l-.8 1c.8 1.5 1.8 2.5 3.4 3.2l1-.9c.6.4 2.7 1 2.4 1.6-.4 1.3-1.3 1.8-2.7 1.4-3.3-1-5.9-3.6-6.3-6.5-.2-1 .4-1.8 1.5-2.2Z"/></svg>
@@ -462,6 +508,20 @@
     <div id="product-detail"></div>
   </dialog>
 
+  <dialog id="quote-dialog" class="quote-dialog" aria-labelledby="quote-title">
+    <button class="dialog-close" type="button" aria-label="Cerrar mi selección" data-close="quote-dialog">×</button>
+    <p class="eyebrow">CONSULTA DE EQUIPOS</p>
+    <h2 id="quote-title">Mi selección<span>.</span></h2>
+    <p class="quote-description">Seleccioná varios modelos y consultá disponibilidad y precio final en un único mensaje.</p>
+    <div class="quote-items" id="quote-items" aria-live="polite"></div>
+    <p class="quote-disclaimer">Los precios son orientativos. Esta selección no constituye una reserva ni una compra.</p>
+    <div class="quote-actions">
+      <button type="button" class="button" id="quote-whatsapp">Consultar selección por WhatsApp ↗</button>
+      <button type="button" class="text-link" id="quote-clear">Vaciar selección</button>
+    </div>
+  </dialog>
+  <p class="sr-only" id="quote-feedback" role="status" aria-live="polite"></p>
+
   <dialog id="contact-dialog" aria-labelledby="contact-title">
     <button class="dialog-close" aria-label="Cerrar consulta" data-close="contact-dialog">×</button>
     <p class="eyebrow">TU CONSULTA</p>
@@ -481,7 +541,6 @@
   </noscript>
 
   <!-- SCRIPTS -->
-  <script src="data/catalog-fallback.js"></script>
   <script src="assets/app.js" defer></script>
 </body>
 </html>
