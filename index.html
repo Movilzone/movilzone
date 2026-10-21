@@ -73,6 +73,7 @@
         <a href="#ofertas">Ofertas</a>
         <a href="#servicio-tecnico">Servicio técnico</a>
         <a href="#local">El local</a>
+        <button type="button" class="quote-nav-button" data-quote-open aria-haspopup="dialog" aria-controls="quote-dialog">Mi selección <span data-quote-count>0</span></button>
         <button class="button button-small" data-contact="Hola, estoy viendo la web de Movil Zone y quería hacer una consulta.">WhatsApp <span aria-hidden="true">↗</span></button>
       </nav>
     </div>
@@ -197,7 +198,7 @@
       </div>
 
       <!-- Filtros -->
-      <div class="filters" aria-label="Filtrar catálogo">
+      <div class="filters" role="group" aria-label="Filtrar catálogo">
         <button data-filter="all" aria-pressed="true">Todos</button>
         <button data-filter="iphone" aria-pressed="false">Todos los iPhone</button>
         <button data-filter="apple" aria-pressed="false">iPhone nuevos</button>
@@ -441,6 +442,10 @@
     <small>Mar del Plata · <span id="year"></span></small>
   </footer>
 
+  <button id="quote-floating" class="quote-floating" type="button" data-quote-open aria-haspopup="dialog" aria-controls="quote-dialog" aria-label="Abrir mi selección de equipos" hidden>
+    <span aria-hidden="true">＋</span> Mi selección <span data-quote-count>0</span>
+  </button>
+
   <!-- BOTÓN FLOTANTE WHATSAPP -->
   <button class="floating-contact" aria-label="Consultar por WhatsApp" data-contact="Hola, estoy viendo la web de Movil Zone. Quería hacer una consulta.">
     <svg class="channel-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 11.7a8.5 8.5 0 0 1-12.7 7.4L3 20.5l1.4-4.7a8.5 8.5 0 1 1 16.1-4.1Z"/><path d="M8 7.5c.6-.3 1 1.8 1.5 2.4l-.8 1c.8 1.5 1.8 2.5 3.4 3.2l1-.9c.6.4 2.7 1 2.4 1.6-.4 1.3-1.3 1.8-2.7 1.4-3.3-1-5.9-3.6-6.3-6.5-.2-1 .4-1.8 1.5-2.2Z"/></svg>
@@ -462,6 +467,20 @@
     <div id="product-detail"></div>
   </dialog>
 
+  <dialog id="quote-dialog" class="quote-dialog" aria-labelledby="quote-title">
+    <button class="dialog-close" type="button" aria-label="Cerrar mi selección" data-close="quote-dialog">×</button>
+    <p class="eyebrow">CONSULTA DE EQUIPOS</p>
+    <h2 id="quote-title">Mi selección<span>.</span></h2>
+    <p class="quote-description">Seleccioná varios modelos y consultá disponibilidad y precio final en un único mensaje.</p>
+    <div class="quote-items" id="quote-items" aria-live="polite"></div>
+    <p class="quote-disclaimer">Los precios son orientativos. Esta selección no constituye una reserva ni una compra.</p>
+    <div class="quote-actions">
+      <button type="button" class="button" id="quote-whatsapp">Consultar selección por WhatsApp ↗</button>
+      <button type="button" class="text-link" id="quote-clear">Vaciar selección</button>
+    </div>
+    <p class="sr-only" id="quote-feedback" role="status" aria-live="polite"></p>
+  </dialog>
+
   <dialog id="contact-dialog" aria-labelledby="contact-title">
     <button class="dialog-close" aria-label="Cerrar consulta" data-close="contact-dialog">×</button>
     <p class="eyebrow">TU CONSULTA</p>
@@ -481,7 +500,6 @@
   </noscript>
 
   <!-- SCRIPTS -->
-  <script src="data/catalog-fallback.js"></script>
   <script src="assets/app.js" defer></script>
 </body>
 </html>

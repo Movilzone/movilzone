@@ -7,6 +7,9 @@
 
   let colorImages = {};
   let products = [], filter = 'all', loadFailed = false, visibleLimit = 12;
+  const QUOTE_KEY = 'mz-consulta-v1';
+  const QUOTE_LIMIT = 15;
+  let quoteItems = [];
   let config = { whatsapp: '5492236606864', catalogEnabled: false, catalogEndpoint: '/api/catalog' };
 
   const brandFilters = { apple: 'Apple', samsung: 'Samsung', motorola: 'Motorola', xiaomi: 'Xiaomi' };
@@ -68,8 +71,81 @@
     box.innerHTML = '<div class="placeholder-device" aria-hidden="true"></div><span class="placeholder-text">Foto de referencia · Consultanos</span>';
   }, true);
 
+
+  function loadQuote() {
+    try {
+      const saved = JSON.parse(localStorage.getItem(QUOTE_KEY) || '[]');
+      return Array.isArray(saved) ? saved.filter(item => item && typeof item.id === 'string' && typeof item.color === 'string').slice(0, QUOTE_LIMIT) : [];
+    } catch { return []; }
+  }
+
+  function persistQuote() {
+    try { localStorage.setItem(QUOTE_KEY, JSON.stringify(quoteItems)); }
+    catch { /* Puede estar deshabilitado el almacenamiento; la selección sigue en memoria. */ }
+  }
+
+  const quoteHas = (id, color) => quoteItems.some(item => item.id === id && item.color === color);
+
+  function refreshQuote() {
+    quoteItems = quoteItems.filter(item => products.some(p => p.id === item.id));
+    const entries = quoteItems.map(item => ({ ...item, p: products.find(p => p.id === item.id) }));
+    const count = entries.length;
+    document.querySelectorAll('[data-quote-count]').forEach(el => { el.textContent = String(count); });
+    $('quote-floating').hidden = !count;
+    $('quote-items').innerHTML = count ? entries.map(item => {
+      const p = item.p;
+      const details = [p.capacity, p.ram ? 'RAM ' + p.ram : '', item.color || p.color, stateLabel[p.state] || p.state].filter(Boolean).join(' · ');
+      return `<div class="quote-item"><div><strong>${escape(p.model)}</strong><p>${escape(details)}</p><small>Precio de referencia: ${money(p)}</small></div><button type="button" class="quote-remove" data-quote-remove="${escape(p.id)}" data-selected-color="${escape(item.color)}" aria-label="Quitar ${escape(p.model)} de mi selección">Quitar ×</button></div>`;
+    }).join('') : '<p class="quote-empty">Todavía no hay equipos seleccionados. Explorá el catálogo para agregar modelos.</p>';
+    $('quote-whatsapp').disabled = !count;
+    $('quote-clear').disabled = !count;
+    document.querySelectorAll('[data-quote-add]').forEach(btn => {
+      const selected = quoteHas(btn.dataset.quoteAdd, btn.dataset.selectedColor || '');
+      btn.textContent = selected ? '✓ En mi selección' : '+ Sumar a mi selección';
+      btn.setAttribute('aria-pressed', String(selected));
+    });
+  }
+
+  function addQuote(id, color = '') {
+    const p = products.find(p => p.id === id);
+    if (!p) return;
+    if (!quoteHas(id, color)) {
+      if (quoteItems.length >= QUOTE_LIMIT) {
+        $('quote-feedback').textContent = 'La selección admite hasta 15 equipos.';
+        if (!$('quote-dialog').open) $('quote-dialog').showModal();
+        return;
+      }
+      quoteItems.push({ id, color });
+      persistQuote();
+    }
+    refreshQuote();
+    $('quote-feedback').textContent = p.model + ' se agregó a tu selección.';
+  }
+
+  function removeQuote(id, color = '') {
+    quoteItems = quoteItems.filter(item => item.id !== id || item.color !== color);
+    persistQuote();
+    refreshQuote();
+    $('quote-feedback').textContent = 'Equipo quitado.';
+  }
+
+  function quoteMessage() {
+    const lines = quoteItems.map(item => {
+      const p = products.find(p => p.id === item.id);
+      if (!p) return '';
+      const description = [p.model, p.capacity, p.ram ? 'RAM ' + p.ram : '', item.color || p.color, stateLabel[p.state] || p.state].filter(Boolean).join(' · ');
+      return '• ' + description + ' (precio de referencia ' + money(p) + ')';
+    }).filter(Boolean);
+    return 'Hola, armé esta selección en la web de Movil Zone / Apple Zone y quisiera consultar disponibilidad y precio final:\n\n' + lines.join('\n') + '\n\n¿Me confirman stock, estado y condiciones de cada equipo?';
+  }
+
+  function quoteAction(p) {
+    const choose = p.variants?.length > 1 || String(p.color || '').includes('/');
+    return `<button type="button" class="quote-add" ${choose ? 'data-product-detail' : 'data-quote-add'}="${escape(p.id)}">+ Sumar a mi selección</button>`;
+  }
+
   function card(p) {
-    return `<article class="product-card">${photo(p)}<p class="product-meta">${escape(p.brand)} · ${escape(stateLabel[p.state] || p.state)}${p.offer ? ' · Oferta' : ''}</p><h3>${escape(p.model)}</h3><p class="product-spec">${p.variants?.length > 1 ? escape(p.variants.length + ' variantes · Elegí capacidad y color') : escape(specs(p))}${p.state === 'usado' ? ` · Batería ${p.battery !== null && p.battery !== undefined ? escape(p.battery) + '%' : 'a consultar'}` : ''}</p>${p.publicNotes ? `<p class="product-notes">${escape(p.publicNotes)}</p>` : ''}<p class="product-price">${p.variants?.some(v => v.price !== p.price) ? '<small class="price-from">Desde </small>' : ''}${money(p)}</p>${extraPrice(p)}<p class="availability">Disponibilidad a confirmar</p><div class="card-actions"><button class="button" ${p.variants?.length > 1 || (p.color && p.color.includes('/')) ? 'data-product-detail' : 'data-product-contact'}="${escape(p.id)}">${p.variants?.length > 1 || (p.color && p.color.includes('/')) ? 'Elegir variante ↗' : 'Consultar por WhatsApp ↗'}</button><button class="detail-button" data-product-detail="${escape(p.id)}">Ver detalle</button></div></article>`;
+    return `<article class="product-card">${photo(p)}<p class="product-meta">${escape(p.brand)} · ${escape(stateLabel[p.state] || p.state)}${p.offer ? ' · Oferta' : ''}</p><h3>${escape(p.model)}</h3><p class="product-spec">${p.variants?.length > 1 ? escape(p.variants.length + ' variantes · Elegí capacidad y color') : escape(specs(p))}${p.state === 'usado' ? ` · Batería ${p.battery !== null && p.battery !== undefined ? escape(p.battery) + '%' : 'a consultar'}` : ''}</p>${p.publicNotes ? `<p class="product-notes">${escape(p.publicNotes)}</p>` : ''}<p class="product-price">${p.variants?.some(v => v.price !== p.price) ? '<small class="price-from">Desde </small>' : ''}${money(p)}</p>${extraPrice(p)}<p class="availability">Disponibilidad a confirmar</p><div class="card-actions"><button class="button" ${p.variants?.length > 1 || (p.color && p.color.includes('/')) ? 'data-product-detail' : 'data-product-contact'}="${escape(p.id)}">${p.variants?.length > 1 || (p.color && p.color.includes('/')) ? 'Elegir variante ↗' : 'Consultar por WhatsApp ↗'}</button><button class="detail-button" data-product-detail="${escape(p.id)}">Ver detalle</button></div>${quoteAction(p)}</article>`;
   }
 
   function render() {
@@ -149,6 +225,7 @@
       </article>
     `).join('');
     $('offers-empty').hidden = offers.length > 0;
+    refreshQuote();
   }
 
   function showProduct(id, selectedColor) {
@@ -180,6 +257,7 @@
       ${extraPrice(p)}
       ${p.installments3 || p.installments6 ? `<div class="installment-options">${p.installments3 ? `<p>3 cuotas de <strong>${pesos(p.installments3)}</strong></p>` : ''}${p.installments6 ? `<p>6 cuotas de <strong>${pesos(p.installments6)}</strong></p>` : ''}<small>Con tarjeta de crédito. Consultá promociones vigentes.</small></div>` : ''}
       <div class="dialog-actions">
+        <button type="button" class="quote-add quote-add-detail" data-quote-add="${escape(p.id)}" data-selected-color="${escape(chosen)}">+ Sumar a mi selección</button>
         <button class="button" data-product-contact="${escape(p.id)}" data-selected-color="${escape(chosen)}">Consultar por WhatsApp ↗</button>
       </div>
     `;
@@ -201,6 +279,7 @@
     });
 
     if (!$('product-dialog').open) $('product-dialog').showModal();
+    refreshQuote();
   }
 
   function route(scroll = false) {
@@ -246,8 +325,14 @@
       route(true);
     }
 
-    const btn = event.target.closest('[data-contact],[data-product-contact],[data-product-detail],[data-filter],[data-close]');
+    const btn = event.target.closest('[data-contact],[data-product-contact],[data-product-detail],[data-filter],[data-close],[data-quote-open],[data-quote-add],[data-quote-remove]');
     if (btn) {
+      if (btn.dataset.quoteOpen !== undefined) {
+        refreshQuote();
+        if (!$('quote-dialog').open) $('quote-dialog').showModal();
+      }
+      if (btn.dataset.quoteAdd) addQuote(btn.dataset.quoteAdd, btn.dataset.selectedColor || '');
+      if (btn.dataset.quoteRemove) removeQuote(btn.dataset.quoteRemove, btn.dataset.selectedColor || '');
       if (btn.dataset.contact !== undefined) contact(btn.dataset.contact);
       if (btn.dataset.productContact) {
         const p = products.find(p => p.id === btn.dataset.productContact);
@@ -276,18 +361,21 @@
     if (event.target.closest('nav a,nav button[data-contact]')) {
       $('main-nav').classList.remove('open');
       $('menu-toggle').setAttribute('aria-expanded', 'false');
+      $('menu-toggle').setAttribute('aria-label', 'Abrir menú');
     }
   });
 
   $('menu-toggle').addEventListener('click', () => {
     const open = $('main-nav').classList.toggle('open');
     $('menu-toggle').setAttribute('aria-expanded', String(open));
+    $('menu-toggle').setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
   });
 
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') {
       $('main-nav').classList.remove('open');
       $('menu-toggle').setAttribute('aria-expanded', 'false');
+      $('menu-toggle').setAttribute('aria-label', 'Abrir menú');
     }
   });
 
@@ -305,6 +393,7 @@
     if (!event.target.closest('.header')) {
       $('main-nav').classList.remove('open');
       $('menu-toggle').setAttribute('aria-expanded', 'false');
+      $('menu-toggle').setAttribute('aria-label', 'Abrir menú');
     }
   });
 
@@ -322,6 +411,18 @@
   $('load-more').addEventListener('click', () => { visibleLimit += 12; render(); });
 
   $('empty-contact').addEventListener('click', () => contact(`Hola, estoy viendo la web de Movil Zone. Quería consultar por ${$('search').value.trim() || filterNames[filter]}.`));
+
+  $('quote-whatsapp').addEventListener('click', () => {
+    if (!quoteItems.length) return;
+    $('quote-dialog').close();
+    contact(quoteMessage());
+  });
+  $('quote-clear').addEventListener('click', () => {
+    quoteItems = [];
+    persistQuote();
+    refreshQuote();
+    $('quote-feedback').textContent = 'Selección vaciada.';
+  });
 
   $('copy-message').addEventListener('click', async () => {
     try {
@@ -376,6 +477,18 @@
 
   if ($('year')) $('year').textContent = new Date().getFullYear();
 
+  async function loadStaticFallback() {
+    if (window.MZ_STATIC_CATALOG?.products) return window.MZ_STATIC_CATALOG;
+    return new Promise(resolve => {
+      const script = document.createElement('script');
+      script.src = 'data/catalog-fallback.js';
+      script.async = true;
+      script.onload = () => resolve(window.MZ_STATIC_CATALOG || null);
+      script.onerror = () => resolve(null);
+      document.head.appendChild(script);
+    });
+  }
+
   async function json(url) {
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 10000);
@@ -409,20 +522,15 @@
             ]);
           }
         } catch {
-          // Fallback a objetos estáticos precargados
-          data = window.MZ_STATIC_CATALOG;
-          colorImages = window.MZ_STATIC_IMAGES || {};
+          data = null;
         }
       }
 
       // Si fetch no devolvió datos (por ejemplo, en protocolo local file://), usar el fallback garantizado
       if (!data || !Array.isArray(data.products)) {
-        if (window.MZ_STATIC_CATALOG && Array.isArray(window.MZ_STATIC_CATALOG.products)) {
-          data = window.MZ_STATIC_CATALOG;
-          colorImages = window.MZ_STATIC_IMAGES || {};
-        } else {
-          throw new Error('Catálogo no disponible');
-        }
+        data = await loadStaticFallback();
+        if (!data || !Array.isArray(data.products)) throw new Error('Catálogo no disponible');
+        colorImages = window.MZ_STATIC_IMAGES || colorImages;
       }
 
       if ($('catalog-source')) {
@@ -430,6 +538,7 @@
       }
 
       products = data.products.filter(p => p && typeof p.id === 'string' && typeof p.model === 'string' && typeof p.price === 'number' && Number.isFinite(p.price) && p.price > 0 && ['USD', 'ARS'].includes(p.currency));
+      quoteItems = loadQuote();
     } catch {
       loadFailed = true;
       products = [];

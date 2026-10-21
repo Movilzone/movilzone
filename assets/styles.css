@@ -55,3 +55,23 @@ body{font-family:Arial,Helvetica,sans-serif}.shell{max-width:1240px}.topline{bac
 .hero-product-photo{inset:45px 28px 218px}.hero-product-photo img{mix-blend-mode:normal;min-height:0;object-fit:contain}.hero-product-photo>span{line-height:1.4;text-align:center;flex-shrink:0}.hero-offer{background:#fff}.offer-editorial>.product-image{height:350px}.offer-editorial+.offer-editorial{margin-top:24px}.brand-logo,.footer-logo{object-fit:contain;aspect-ratio:1/1;flex-shrink:0}
 @media(max-width:800px){.product-card>.product-image{height:205px}.brand-card{height:235px}.category-photo,.brand-extra .category-photo{height:105px}}
 @media(max-width:560px){.product-card>.product-image{height:175px;margin-bottom:16px}.product-image img{padding:12px 10px 36px}.photo-caption{font-size:9px;bottom:8px;left:5px;right:5px}.brand-card{height:217px;padding:17px}.brand-card strong{font-size:23px;margin-top:10px}.category-photo,.brand-extra .category-photo{height:88px;margin-top:10px}.product-detail .product-image{height:270px}.hero-product-photo{inset:35px 24px 220px}.offer-editorial>.product-image{height:270px}.offer-editorial+.offer-editorial{margin-top:18px}}
+
+
+/* Mi selección: contacto múltiple por WhatsApp, sin checkout ficticio. */
+.quote-nav-button{display:inline-flex;align-items:center;gap:9px;padding:10px 12px;border:1px solid #cbd9ee;border-radius:10px;background:#f0f5ff;color:#144aa6;font-size:13px;font-weight:700;min-height:44px}
+.quote-nav-button:hover{background:#e4eeff}.quote-nav-button [data-quote-count],.quote-floating [data-quote-count]{display:inline-grid;place-items:center;min-width:22px;height:22px;padding-inline:6px;border-radius:999px;background:#125be6;color:white;font-size:12px;font-variant-numeric:tabular-nums}
+.quote-add{width:100%;min-height:44px;padding:10px 15px;margin-top:12px;border:1px solid #b7cdee;border-radius:10px;background:#eef4ff;color:#174987;font-weight:700;font-size:13px;transition:background .15s}
+.quote-add:hover{background:#dceaff}.quote-add[aria-pressed="true"]{background:#eaf7f0;color:#226348;border-color:#b7dcca}
+.quote-floating{position:fixed;left:18px;bottom:20px;z-index:12;display:flex;align-items:center;gap:10px;min-height:48px;padding:12px 17px;border:1px solid #355f9e;border-radius:999px;background:#0d2240;color:#fff;font-weight:700;font-size:13px;box-shadow:0 12px 32px #0a254d55}
+.quote-floating:hover{background:#173e70}.quote-floating[hidden]{display:none!important}
+.quote-dialog{width:min(570px,calc(100% - 28px));max-height:min(90dvh,850px);overflow:auto;padding:38px;border:1px solid #e1e7f0;border-radius:20px}
+.quote-dialog::backdrop{background:#0b1525ba;backdrop-filter:blur(5px)}.quote-dialog h2{font-size:clamp(30px,5vw,43px)}
+.quote-description{max-width:44ch;font-size:14px;line-height:1.7;color:var(--muted);margin:16px 0 24px}
+.quote-items{display:grid;gap:10px}.quote-item{display:flex;justify-content:space-between;gap:16px;padding:16px;background:#f7f9fc;border:1px solid #e6ebf1;border-radius:12px}
+.quote-item strong{font-size:16px}.quote-item p{font-size:13px;color:var(--muted);margin-top:6px;line-height:1.5}.quote-item small{display:block;margin-top:7px;font-size:12px;color:#58677b}
+.quote-remove{min-height:44px;flex-shrink:0;border:0;background:transparent;color:#4a5c74;font-size:12px;font-weight:700}.quote-remove:hover{color:#b52e40;text-decoration:underline}
+.quote-empty{padding:22px;border:1px dashed #b5c8e2;border-radius:12px;background:#f7f9fc;font-size:14px;color:#546176}
+.quote-disclaimer{margin:18px 0;color:#606b7a;font-size:12px;line-height:1.65}.quote-actions{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px}.quote-actions .button{flex:1;min-width:210px}.quote-actions button:disabled{opacity:.45;cursor:not-allowed}
+.dialog-actions .quote-add-detail{width:auto;min-width:145px;flex:1;margin-top:0}
+@media(max-width:800px){.quote-floating{left:12px;bottom:86px;padding:10px 14px}.quote-dialog{padding:28px 19px 24px}.quote-actions{flex-direction:column;align-items:stretch}.quote-actions .button{min-width:0;width:100%;flex:none}.quote-actions .text-link{justify-content:center}.quote-item{flex-direction:column;gap:3px}.quote-remove{align-self:flex-end}}
+@media(prefers-reduced-motion:reduce){.quote-add{transition:none}}
