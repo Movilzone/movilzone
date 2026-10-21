@@ -1,0 +1,115 @@
+{
+  "iPhone 17 Pro Max": {
+    "silver": "/assets/products/colors/iphone-17-pro-max-silver.webp",
+    "blue": "/assets/products/colors/iphone-17-pro-max-blue.webp",
+    "orange": "/assets/products/colors/iphone-17-pro-max-orange.webp"
+  },
+  "iPhone 15": {
+    "black": "/assets/products/colors/iphone-15-black.webp",
+    "blue": "/assets/products/colors/iphone-15-blue.webp"
+  },
+  "iPhone 16": {
+    "black": "/assets/products/colors/iphone-16-black.webp",
+    "white": "/assets/products/colors/iphone-16-white.webp",
+    "teal": "/assets/products/colors/iphone-16-teal.webp"
+  },
+  "iPhone 17": {
+    "sage": "/assets/products/colors/iphone-17-sage.webp",
+    "white": "/assets/products/colors/iphone-17-white.webp",
+    "blue": "/assets/products/colors/iphone-17-blue.webp",
+    "lavender": "/assets/products/iphone-17.webp",
+    "black": "/assets/products/colors/iphone-17-black.webp"
+  },
+  "Samsung Galaxy A27 5G": {
+    "black": "/assets/products/colors/samsung-galaxy-a27-5g-black.webp",
+    "blue": "/assets/products/colors/samsung-galaxy-a27-5g-blue.webp"
+  },
+  "Samsung Galaxy A57 5G": {
+    "navy": "/assets/products/colors/samsung-galaxy-a57-5g-navy.webp",
+    "grey": "/assets/products/colors/samsung-galaxy-a57-5g-grey.webp"
+  },
+  "Samsung Galaxy S26 Ultra": {
+    "violet": "/assets/products/colors/samsung-galaxy-s26-ultra-violet.webp",
+    "black": "/assets/products/colors/samsung-galaxy-s26-ultra-black.webp",
+    "white": "/assets/products/colors/samsung-galaxy-s26-ultra-white.webp"
+  },
+  "Redmi Note 15": {
+    "violet": "/assets/products/colors/redmi-note-15-violet.webp",
+    "black": "/assets/products/colors/redmi-note-15-black.webp"
+  },
+  "Redmi Note 15 Pro 5G": {
+    "black": "/assets/products/colors/redmi-note-15-pro-5g-black.webp",
+    "grey": "/assets/products/colors/redmi-note-15-pro-5g-grey.webp"
+  },
+  "iPhone 17 Pro": {
+    "blue": "/assets/products/colors/iphone-17-pro-blue.webp",
+    "silver": "/assets/products/colors/iphone-17-pro-silver.webp",
+    "orange": "/assets/products/colors/iphone-17-pro-orange.webp"
+  },
+  "MacBook Neo A18 13”": {
+    "citrus": "/assets/products/macbook-neo-a18-13-citrus.webp",
+    "silver": "/assets/products/macbook-neo-a18-13-silver.webp"
+  },
+  "iPad Air M4 11”": {
+    "starlight": "/assets/products/ipad-air-m4-11-starlight.webp",
+    "space gray": "/assets/products/colors/ipad-air-m4-11-space-gray.webp"
+  },
+  "iPhone 14": {
+    "black": "/assets/products/colors/iphone-14-black.webp"
+  },
+  "iPhone 18 Pro": {
+    "glacier": "/assets/products/colors/iphone-18-pro-glacier.webp",
+    "burgundy": "/assets/products/colors/iphone-18-pro-burgundy.webp",
+    "black": "/assets/products/colors/iphone-18-pro-black.webp",
+    "silver": "/assets/products/colors/iphone-18-pro-silver.webp"
+  },
+  "iPhone 18 Pro Max": {
+    "black": "/assets/products/colors/iphone-18-pro-max-black.webp",
+    "silver": "/assets/products/colors/iphone-18-pro-max-silver.webp",
+    "glacier": "/assets/products/colors/iphone-18-pro-max-glacier.webp",
+    "burgundy": "/assets/products/colors/iphone-18-pro-max-burgundy.webp"
+  },
+  "Samsung Galaxy A17": {
+    "grey": "/assets/products/colors/samsung-galaxy-a17-grey.webp",
+    "light blue": "/assets/products/colors/samsung-galaxy-a17-light-blue.webp",
+    "black": "/assets/products/samsung-galaxy-a17.webp"
+  },
+  "Samsung Galaxy A37 5G": {
+    "awesome charcoal": "/assets/products/colors/samsung-galaxy-a37-5g-awesome-charcoal.webp",
+    "grey": "/assets/products/colors/samsung-galaxy-a37-5g-grey.webp"
+  },
+  "Samsung Galaxy S25 Ultra": {
+    "black": "/assets/products/colors/samsung-galaxy-s25-ultra-black.webp",
+    "silver blue": "/assets/products/colors/samsung-galaxy-s25-ultra-silver-blue.webp",
+    "white silver": "/assets/products/colors/samsung-galaxy-s25-ultra-white-silver.webp"
+  },
+  "Motorola Moto G86 Power": {
+    "blue": "/assets/products/colors/motorola-moto-g86-power-blue.webp",
+    "cherry": "/assets/products/colors/motorola-moto-g86-power-cherry.webp",
+    "spellbound": "/assets/products/colors/motorola-moto-g86-power-spellbound.webp",
+    "gold cypress": "/assets/products/colors/motorola-moto-g86-power-gold-cypress.webp"
+  },
+  "iPad A16 11”": {
+    "pink": "/assets/products/colors/ipad-a16-11-pink.webp",
+    "blue": "/assets/products/colors/ipad-a16-11-blue.webp",
+    "silver": "/assets/products/colors/ipad-a16-11-silver.webp"
+  },
+  "iPad Pro M5 11”": {
+    "space": "/assets/products/colors/ipad-pro-m5-11-space.webp"
+  },
+  "MacBook M5 13”": {
+    "silver": "/assets/products/colors/macbook-m5-13-silver.webp"
+  },
+  "MacBook M5 15”": {
+    "silver": "/assets/products/colors/macbook-m5-15-silver.webp"
+  },
+  "iPad A16": {
+    "pink": "/assets/products/colors/ipad-a16-11-pink.webp",
+    "blue": "/assets/products/colors/ipad-a16-11-blue.webp",
+    "silver": "/assets/products/colors/ipad-a16-11-silver.webp"
+  },
+  "MacBook Neo 13”": {
+    "citrus": "/assets/products/macbook-neo-a18-13-citrus.webp",
+    "silver": "/assets/products/macbook-neo-a18-13-silver.webp"
+  }
+}
