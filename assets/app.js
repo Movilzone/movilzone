@@ -48,24 +48,25 @@
     if (!$('contact-dialog').open) $('contact-dialog').showModal();
   }
 
-  function photo(p) {
-    const cleanModel = p.model.replace(/["”]/g, '').trim();
-    const exact = colorImages[p.model]?.[normalize(p.color)] ||
-                  colorImages[p.model.replace(/"/g, '”')]?.[normalize(p.color)] ||
-                  colorImages[p.model.replace(/”/g, '"')]?.[normalize(p.color)] ||
-                  colorImages[cleanModel]?.[normalize(p.color)];
-
-    const path = safeImage(exact || p.image);
+  const modelKey = value => searchText(value);
+  const colorKey = value => normalize(value).trim().replace(/\s+/g, ' ');
+  function exactColorImage(model, color) {
+    const variants=Object.entries(colorImages).find(([name])=>modelKey(name)===modelKey(model))?.[1];
+    return variants ? Object.entries(variants).find(([name])=>colorKey(name)===colorKey(color))?.[1] : '';
+  }
+  function photo(p, requireExactColor=false) {
+    const exact = exactColorImage(p.model,p.color);
+    const path = safeImage(exact || (requireExactColor && p.color ? '' : p.image));
     const src = window.MZ_PREVIEW?.images?.[path] || path;
-
-    return `<div class="product-image">${src ? `<img src="${escape(src)}" alt="${escape('Foto comercial de ' + p.model + (exact ? ' · ' + p.color : ''))}" width="720" height="720" loading="lazy" decoding="async"><span class="photo-caption">${exact ? escape('Foto del modelo · ' + p.color) : 'Foto del modelo · Color de referencia'}</span>` : '<div class="placeholder-device" aria-hidden="true"></div><span class="placeholder-text">Ilustración de referencia</span>'}</div>`;
+    const pending = requireExactColor && p.color ? 'Foto del color '+p.color+' no disponible. Consultanos.' : 'Foto de referencia · Consultanos';
+    return `<div class="product-image">${src ? `<img src="${escape(src)}" alt="${escape('Foto comercial de ' + p.model + (exact ? ' · ' + p.color : ''))}" width="720" height="720" loading="lazy" decoding="async"><span class="photo-caption">${exact ? escape('Foto del modelo · '+p.color) : 'Foto del modelo · Color de referencia'}</span>` : `<span class="image-pending-icon" aria-hidden="true">▧</span><span class="placeholder-text">${escape(pending)}</span>`}</div>`;
   }
 
   document.addEventListener('error', event => {
     const image = event.target;
     if (image.tagName !== 'IMG' || !image.closest('.product-image')) return;
     const box = image.closest('.product-image');
-    box.innerHTML = '<div class="placeholder-device" aria-hidden="true"></div><span class="placeholder-text">Foto de referencia · Consultanos</span>';
+    box.innerHTML = '<span class="image-pending-icon" aria-hidden="true">▧</span><span class="placeholder-text">Foto no disponible · Consultanos</span>';
   }, true);
 
   function card(p) {
@@ -163,7 +164,7 @@
 
     history.replaceState(null, '', `#producto/${p.id}${chosen ? '/' + encodeURIComponent(chosen) : ''}`);
     $('product-detail').innerHTML = `
-      ${photo(p)}
+      ${photo(p,Boolean(chosen))}
       <p class="eyebrow">${escape(p.brand)} · ${escape(stateLabel[p.state] || p.state)}</p>
       <h2 id="product-title">${escape(p.model)}</h2>
       ${variants.length > 1 ? `<label class="variant-label" for="product-variant">Elegí capacidad y color</label><select class="variant-select" id="product-variant">${variants.map(v => `<option value="${escape(v.id)}" ${v.id === p.id ? 'selected' : ''}>${escape(specs(v) || v.model)} — ${money(v)}</option>`).join('')}</select>` : ''}

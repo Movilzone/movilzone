@@ -11,7 +11,8 @@
   "iPhone 16": {
     "black": "/assets/products/colors/iphone-16-black.webp",
     "white": "/assets/products/colors/iphone-16-white.webp",
-    "teal": "/assets/products/colors/iphone-16-teal.webp"
+    "teal": "/assets/products/colors/iphone-16-teal.webp",
+    "pink": "/assets/products/colors/iphone-16-pink.webp"
   },
   "iPhone 17": {
     "sage": "/assets/products/colors/iphone-17-sage.webp",
@@ -31,7 +32,8 @@
   "Samsung Galaxy S26 Ultra": {
     "violet": "/assets/products/colors/samsung-galaxy-s26-ultra-violet.webp",
     "black": "/assets/products/colors/samsung-galaxy-s26-ultra-black.webp",
-    "white": "/assets/products/colors/samsung-galaxy-s26-ultra-white.webp"
+    "white": "/assets/products/colors/samsung-galaxy-s26-ultra-white.webp",
+    "blue": "/assets/products/colors/samsung-galaxy-s26-ultra-blue.webp"
   },
   "Redmi Note 15": {
     "violet": "/assets/products/colors/redmi-note-15-violet.webp",
@@ -52,7 +54,8 @@
   },
   "iPad Air M4 11”": {
     "starlight": "/assets/products/ipad-air-m4-11-starlight.webp",
-    "space gray": "/assets/products/colors/ipad-air-m4-11-space-gray.webp"
+    "space gray": "/assets/products/colors/ipad-air-m4-11-space-gray.webp",
+    "purple": "/assets/products/colors/ipad-air-m4-11-purple.webp"
   },
   "iPhone 14": {
     "black": "/assets/products/colors/iphone-14-black.webp"
@@ -76,7 +79,8 @@
   },
   "Samsung Galaxy A37 5G": {
     "awesome charcoal": "/assets/products/colors/samsung-galaxy-a37-5g-awesome-charcoal.webp",
-    "grey": "/assets/products/colors/samsung-galaxy-a37-5g-grey.webp"
+    "grey": "/assets/products/colors/samsung-galaxy-a37-5g-grey.webp",
+    "charcoal": "/assets/products/colors/samsung-galaxy-a37-5g-awesome-charcoal.webp"
   },
   "Samsung Galaxy S25 Ultra": {
     "black": "/assets/products/colors/samsung-galaxy-s25-ultra-black.webp",
@@ -110,6 +114,33 @@
   },
   "MacBook Neo 13”": {
     "citrus": "/assets/products/macbook-neo-a18-13-citrus.webp",
-    "silver": "/assets/products/macbook-neo-a18-13-silver.webp"
+    "silver": "/assets/products/macbook-neo-a18-13-silver.webp",
+    "indigo": "/assets/products/colors/macbook-neo-13-indigo.webp"
+  },
+  "MacBook Air M4 13”": {
+    "blue": "/assets/products/colors/macbook-air-m4-13-blue.webp",
+    "silver": "/assets/products/macbook-air-m4-13.webp"
+  },
+  "MacBook Air M5 13”": {
+    "midnight": "/assets/products/colors/macbook-air-m5-13-midnight.webp",
+    "sky blue": "/assets/products/colors/macbook-air-m5-13-sky-blue.webp",
+    "silver": "/assets/products/colors/macbook-m5-13-silver.webp",
+    "starlight": "/assets/products/colors/macbook-air-m5-13-starlight.webp"
+  },
+  "Redmi Note 15 Pro": {
+    "black": "/assets/products/colors/redmi-note-15-pro-black.webp",
+    "glacier blue": "/assets/products/colors/redmi-note-15-pro-glacier-blue.webp",
+    "blue": "/assets/products/colors/redmi-note-15-pro-glacier-blue.webp"
+  },
+  "Redmi Note 17 Pro 5G": {
+    "light blue": "/assets/products/colors/redmi-note-17-pro-5g-light-blue.webp",
+    "blue": "/assets/products/colors/redmi-note-17-pro-5g-blue.webp",
+    "orange": "/assets/products/colors/redmi-note-17-pro-5g-orange.webp"
+  },
+  "POCO X8 Pro 5G": {
+    "black": "/assets/products/colors/poco-x8-pro-black.webp"
+  },
+  "POCO X8 Pro": {
+    "white": "/assets/products/colors/poco-x8-pro-white.webp"
   }
 }
