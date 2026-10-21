@@ -269,6 +269,8 @@ body{font-family:Arial,Helvetica,sans-serif}.shell{max-width:1240px}.topline{bac
   text-align: center;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 .reviews-cta-wrap .button {
   padding: 13px 26px;
