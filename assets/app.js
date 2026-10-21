@@ -141,7 +141,10 @@
 
   function quoteAction(p) {
     const choose = p.variants?.length > 1 || String(p.color || '').includes('/');
-    return `<button type="button" class="quote-add" ${choose ? 'data-product-detail' : 'data-quote-add'}="${escape(p.id)}">+ Sumar a mi selección</button>`;
+    const target = choose
+      ? `data-product-detail="${escape(p.id)}"`
+      : `data-quote-add="${escape(p.id)}" data-selected-color="${escape(p.color || '')}"`;
+    return `<button type="button" class="quote-add" ${target}>+ Sumar a mi selección</button>`;
   }
 
   function card(p) {
