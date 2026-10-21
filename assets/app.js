@@ -70,7 +70,15 @@
   }, true);
 
   function card(p) {
-    return `<article class="product-card">${photo(p)}<p class="product-meta">${escape(p.brand)} · ${escape(stateLabel[p.state] || p.state)}${p.offer ? ' · Oferta' : ''}</p><h3>${escape(p.model)}</h3><p class="product-spec">${p.variants?.length > 1 ? escape(p.variants.length + ' variantes · Elegí capacidad y color') : escape(specs(p))}${p.state === 'usado' ? ` · Batería ${p.battery !== null && p.battery !== undefined ? escape(p.battery) + '%' : 'a consultar'}` : ''}</p>${p.publicNotes ? `<p class="product-notes">${escape(p.publicNotes)}</p>` : ''}<p class="product-price">${p.variants?.some(v => v.price !== p.price) ? '<small class="price-from">Desde </small>' : ''}${money(p)}</p>${extraPrice(p)}<p class="availability">Disponibilidad a confirmar</p><div class="card-actions"><button class="button" ${p.variants?.length > 1 || (p.color && p.color.includes('/')) ? 'data-product-detail' : 'data-product-contact'}="${escape(p.id)}">${p.variants?.length > 1 || (p.color && p.color.includes('/')) ? 'Elegir variante ↗' : 'Consultar por WhatsApp ↗'}</button><button class="detail-button" data-product-detail="${escape(p.id)}">Ver detalle</button></div></article>`;
+    const badgeHtml = p.offer 
+      ? '<span class="badge-pill badge-offer">🔥 OFERTA</span>' 
+      : (p.state === 'nuevo' ? '<span class="badge-pill badge-new">✨ NUEVO</span>' : '');
+
+    const installmentsHtml = p.installments3
+      ? `<div class="card-installments">💳 <strong>3 cuotas de ${pesos(p.installments3)}</strong></div>`
+      : '';
+
+    return `<article class="product-card">${badgeHtml}${photo(p)}<p class="product-meta">${escape(p.brand)} · ${escape(stateLabel[p.state] || p.state)}</p><h3>${escape(p.model)}</h3><p class="product-spec">${p.variants?.length > 1 ? escape(p.variants.length + ' variantes · Elegí capacidad y color') : escape(specs(p))}${p.state === 'usado' ? ` · Batería ${p.battery !== null && p.battery !== undefined ? escape(p.battery) + '%' : 'a consultar'}` : ''}</p>${p.publicNotes ? `<p class="product-notes">${escape(p.publicNotes)}</p>` : ''}<p class="product-price">${p.variants?.some(v => v.price !== p.price) ? '<small class="price-from">Desde </small>' : ''}${money(p)}</p>${extraPrice(p)}${installmentsHtml}<p class="availability">Disponibilidad a confirmar</p><div class="card-actions"><button class="button" ${p.variants?.length > 1 || (p.color && p.color.includes('/')) ? 'data-product-detail' : 'data-product-contact'}="${escape(p.id)}">${p.variants?.length > 1 || (p.color && p.color.includes('/')) ? 'Elegir variante ↗' : 'Consultar por WhatsApp ↗'}</button><button class="detail-button" data-product-detail="${escape(p.id)}">Ver detalle</button></div></article>`;
   }
 
   function render() {
