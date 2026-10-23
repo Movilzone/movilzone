@@ -15,7 +15,8 @@ function boot(hash='') {
  return {node,events,opened,location};
 }
 test('elegir color cambia foto, precio e identificador de consulta',()=>{
- const blue=catalog.products.find(p=>p.model==='iPhone 17 Pro'&&p.color==='Blue'&&p.capacity==='256 GB');
+ const blue=catalog.products.find(p=>p.color==='Blue'&&colorImages[p.model]?.blue&&colorImages[p.model]?.orange&&catalog.products.some(q=>q.model===p.model&&q.state===p.state&&q.capacity===p.capacity&&q.color==='Orange'));
+ assert.ok(blue,'El catálogo debe incluir un par Blue/Orange para verificar el cambio de variante');
  const orange=catalog.products.find(p=>p.model===blue.model&&p.state===blue.state&&p.capacity===blue.capacity&&p.color==='Orange');
  const app=boot('#producto/'+blue.id);
  assert.ok(app.node('product-detail').innerHTML.includes(colorImages[blue.model].blue.slice(1)));
