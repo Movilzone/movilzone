@@ -1,5 +1,5 @@
-const norm=s=>String(s||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
-const slug=s=>String(s).normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const norm=s=>String(s||'').replace(/\+/g,' plus ').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
+const slug=s=>String(s).replace(/\+/g,' plus ').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 function matrix(csv){if(csv.length>1000000)throw Error('size');const rows=[];let row=[],v='',q=false;for(let i=0;i<csv.length;i++){const c=csv[i];if(c==='"'){if(q&&csv[i+1]==='"'){v+='"';i++;}else q=!q;}else if(c===','&&!q){row.push(v);v='';}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&csv[i+1]==='\n')i++;row.push(v);rows.push(row);row=[];v='';}else v+=c;}if(q)throw Error('csv');row.push(v);if(row.some(Boolean))rows.push(row);return rows;}
 function amount(v){const s=String(v||'').replace(/US\$|U\$|\$|\s/g,'').replace(/,/g,'');return /^\d+(\.\d+)?$/.test(s)&&Number(s)>0?Number(s):null;}
 export function liveCatalog(csv,baseline,modelImages={}){
