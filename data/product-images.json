@@ -27,7 +27,8 @@
   },
   "Samsung Galaxy A57 5G": {
     "navy": "/assets/products/colors/samsung-galaxy-a57-5g-navy.webp",
-    "grey": "/assets/products/colors/samsung-galaxy-a57-5g-grey.webp"
+    "grey": "/assets/products/colors/samsung-galaxy-a57-5g-grey.webp",
+    "gray": "/assets/products/colors/samsung-galaxy-a57-5g-grey.webp"
   },
   "Samsung Galaxy S26 Ultra": {
     "violet": "/assets/products/colors/samsung-galaxy-s26-ultra-violet.webp",
@@ -41,7 +42,8 @@
   },
   "Redmi Note 15 Pro 5G": {
     "black": "/assets/products/colors/redmi-note-15-pro-5g-black.webp",
-    "grey": "/assets/products/colors/redmi-note-15-pro-5g-grey.webp"
+    "grey": "/assets/products/colors/redmi-note-15-pro-5g-grey.webp",
+    "gray": "/assets/products/colors/redmi-note-15-pro-5g-grey.webp"
   },
   "iPhone 17 Pro": {
     "blue": "/assets/products/colors/iphone-17-pro-blue.webp",
