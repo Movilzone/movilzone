@@ -8,7 +8,7 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 500,
+      "price": 490,
       "currency": "USD",
       "availability": "consultar",
       "offer": true,
@@ -2879,7 +2879,7 @@
     }
   ],
   "sourceLabel": "Actualizada · 29/10/2026",
-  "checkedAt": "2026-11-05T16:28:10.751Z",
+  "checkedAt": "2026-11-05T17:31:30.533Z",
   "live": false,
   "sourceMode": "scheduled-sheet"
 }
