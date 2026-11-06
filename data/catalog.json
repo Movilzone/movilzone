@@ -80,15 +80,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 360,
+      "price": 340,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-13.webp",
       "publicNotes": "",
-      "priceARS": 563400,
-      "installments3": 257291,
-      "installments6": 148269
+      "priceARS": 532100,
+      "installments3": 242997,
+      "installments6": 140032
     },
     {
       "id": "iphone-13-256gb-usado",
@@ -2879,7 +2879,7 @@
     }
   ],
   "sourceLabel": "Actualizada · 05/11/2026",
-  "checkedAt": "2026-11-06T13:39:34.904Z",
+  "checkedAt": "2026-11-06T16:27:23.898Z",
   "live": false,
   "sourceMode": "scheduled-sheet"
 }
