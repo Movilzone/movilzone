@@ -140,9 +140,14 @@
     "orange": "/assets/products/colors/redmi-note-17-pro-5g-orange.webp"
   },
   "POCO X8 Pro 5G": {
-    "black": "/assets/products/colors/poco-x8-pro-black.webp"
+    "black": "/assets/products/colors/poco-x8-pro-black.webp",
+    "white": "/assets/products/colors/poco-x8-pro-white.webp"
   },
   "POCO X8 Pro": {
     "white": "/assets/products/colors/poco-x8-pro-white.webp"
+  },
+  "Samsung Galaxy A27": {
+    "black": "/assets/products/colors/samsung-galaxy-a27-5g-black.webp",
+    "blue": "/assets/products/colors/samsung-galaxy-a27-5g-blue.webp"
   }
 }
