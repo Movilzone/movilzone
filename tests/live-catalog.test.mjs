@@ -18,3 +18,17 @@ test('separa nombres y colores nuevos y conserva RAM cuando la capacidad es TB',
  const mac=d.products.find(p=>p.model==='MacBook Air M5 13”');assert.equal(mac.color,'Sky Blue');assert.equal(mac.capacity,'1 TB');assert.equal(mac.ram,'16 GB');assert.equal(mac.image,'/assets/products/macbook-m5-13.webp');
  assert.equal(d.products.find(p=>p.model==='MacBook Neo 13”').color,'Indigo / Silver');
 });
+
+test('clasifica equipos sellados por su marca sin cambiar condición ni precio',()=>{
+ const csv=[head,...rows,
+  'SAMSUNG GALAXY A57 5G,8/256GB,485,759025,,,SELLADO,CONSULTAR',
+  'MOTOROLA MOTO G17,4/128GB,210,,,,SELLADO,CONSULTAR',
+  'POCO X8 PRO 5G,8/256GB,440,,,,SELLADO,CONSULTAR',
+  'IPHONE 16,128GB,820,,,,SELLADO,CONSULTAR',
+ ].join('\n');
+ const products=liveCatalog(csv,baseline).products.slice(-4);
+ assert.deepEqual(products.map(p=>[p.brand,p.state,p.price]),[
+  ['Samsung','nuevo',485],['Motorola','nuevo',210],['Xiaomi','nuevo',440],['Apple','nuevo',820],
+ ]);
+ assert.equal(products[0].priceARS,759025);
+});

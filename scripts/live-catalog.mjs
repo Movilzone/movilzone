@@ -23,7 +23,9 @@ export function liveCatalog(csv,baseline,modelImages={}){
   const id=old?.id||slug(`${model}-${detail}-${color}-${state}`);if(ids.has(id))throw Error('duplicate '+id+' '+name);ids.add(id);
   const notes=[];if(parts.slice(1).some(x=>/FALLA/i.test(x)))notes.push('Falla informada: no funciona la cámara 0,5x.');if(state==='activado')notes.push('Equipo activado. Consultá condición y garantía.');if(state==='asis')notes.push('Condición AS IS. Consultá detalles del equipo antes de comprar.');
   const photo=modelImages[model]||old?.image||baseline.products.find(p=>norm(p.model)===norm(model))?.image||'';
-  const p={id,brand:categories[category],model,capacity,color,state,battery:old?.battery??null,price,currency:'USD',availability:'consultar',offer:false,image:photo,publicNotes:notes.join(' '),priceARS:amount(ars),installments3:amount(q3),installments6:amount(q6)};if(ram)p.ram=ram;products.push(p);
+  // SELLADO, ACTIVADO and USADO describe condition, not the manufacturer.
+  const androidBrand=/^Samsung\b/i.test(model)?'Samsung':/^Motorola\b/i.test(model)?'Motorola':/^(Xiaomi|Redmi|POCO)\b/i.test(model)?'Xiaomi':null;
+  const p={id,brand:androidBrand||categories[category],model,capacity,color,state,battery:old?.battery??null,price,currency:'USD',availability:'consultar',offer:false,image:photo,publicNotes:notes.join(' '),priceARS:amount(ars),installments3:amount(q3),installments6:amount(q6)};if(ram)p.ram=ram;products.push(p);
  }
  if(products.length<5)throw Error('empty');
  const offerRows=rows.slice(0,header).filter(r=>/OFERTA\s*·?\s*U\$[\d,]+/.test(r[6]||''));
