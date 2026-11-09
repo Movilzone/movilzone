@@ -5,20 +5,22 @@ import {readFile} from 'node:fs/promises';
 const code=await readFile(new URL('../assets/app.js',import.meta.url),'utf8');
 const catalog=JSON.parse((await readFile(new URL('../data/catalog.json',import.meta.url),'utf8')).replace(/^\uFEFF/,''));
 const colorImages=JSON.parse(await readFile(new URL('../data/product-images.json',import.meta.url),'utf8'));
-function boot(hash='') {
+function boot(hash='', previewCatalog=catalog) {
  const nodes=new Map(),events={},opened=[];
  const node=id=>{if(!nodes.has(id))nodes.set(id,{value:id==='sort'?'default':'',dataset:{},classList:{remove(){},toggle(){return false;}},handlers:{},innerHTML:'',textContent:'',hidden:false,open:false,addEventListener(t,f){this.handlers[t]=f;},setAttribute(){},focus(){},scrollIntoView(options){this.scrollOptions=options;this.scrollCount=(this.scrollCount||0)+1;},showModal(){this.open=true;},close(){this.open=false;},setCustomValidity(){},reportValidity(){}});return nodes.get(id);};
  const document={getElementById:node,querySelectorAll:()=>[],addEventListener(t,f){(events[t]??=[]).push(f);}};
  const location={hash};
- const window={MZ_PREVIEW:{config:{whatsapp:'5492236606864'},catalog,colorImages},addEventListener(t,f){(events['window:'+t]??=[]).push(f);},open(url){opened.push(url);},matchMedia:()=>({matches:true})};
+ const window={MZ_PREVIEW:{config:{whatsapp:'5492236606864'},catalog:previewCatalog,colorImages},addEventListener(t,f){(events['window:'+t]??=[]).push(f);},open(url){opened.push(url);},matchMedia:()=>({matches:true})};
  vm.runInNewContext(code,{document,window,location,history:{replaceState(_a,_b,h){location.hash=h;}},Intl,URL,AbortSignal,navigator:{}});
  return {node,events,opened,location};
 }
 test('elegir color cambia foto, precio e identificador de consulta',()=>{
- const blue=catalog.products.find(p=>p.color==='Blue'&&colorImages[p.model]?.blue&&colorImages[p.model]?.orange&&catalog.products.some(q=>q.model===p.model&&q.state===p.state&&q.capacity===p.capacity&&q.color==='Orange'));
- assert.ok(blue,'El catálogo debe incluir un par Blue/Orange para verificar el cambio de variante');
- const orange=catalog.products.find(p=>p.model===blue.model&&p.state===blue.state&&p.capacity===blue.capacity&&p.color==='Orange');
- const app=boot('#producto/'+blue.id);
+ const model='iPhone 17 Pro Max';
+ const base={model,brand:'Apple',state:'nuevo',capacity:'256 GB',currency:'USD'};
+ const blue={...base,id:'fixture-blue',color:'Blue',price:100};
+ const orange={...base,id:'fixture-orange',color:'Orange',price:200};
+ // Keep the interaction check independent of which variants are on sale.
+ const app=boot('#producto/'+blue.id,{...catalog,products:[blue,orange]});
  assert.ok(app.node('product-detail').innerHTML.includes(colorImages[blue.model].blue.slice(1)));
  app.node('product-color').handlers.change({target:{value:'Orange'}});
  const html=app.node('product-detail').innerHTML;
