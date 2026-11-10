@@ -1500,7 +1500,7 @@
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
-      "image": "",
+      "image": "/assets/products/samsung-galaxy-a37-5g.webp",
       "publicNotes": "",
       "priceARS": 672950,
       "installments3": 307320,
@@ -2278,7 +2278,7 @@
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
-      "image": "",
+      "image": "/assets/products/redmi-note-17-pro-5g.webp",
       "publicNotes": "",
       "priceARS": 696425,
       "installments3": 318040,
@@ -2586,7 +2586,7 @@
     }
   ],
   "sourceLabel": "Actualizada · 10/11/2026",
-  "checkedAt": "2026-11-10T17:19:29.565Z",
+  "checkedAt": "2026-11-10T20:35:03.148Z",
   "live": false,
   "sourceMode": "scheduled-sheet"
 }
