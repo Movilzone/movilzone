@@ -32,8 +32,8 @@ test('elegir color cambia foto, precio e identificador de consulta',()=>{
  assert.ok(app.location.hash.endsWith('/Orange'));
 });
 test('enlace directo conserva el color y la foto elegidos',()=>{
- const p=catalog.products.find(p=>p.model==='iPhone 16'&&p.color.includes('Teal'));
- const html=boot('#producto/'+p.id+'/Teal').node('product-detail').innerHTML;
+ const p={id:'fixture-iphone16-teal',model:'iPhone 16',brand:'Apple',state:'nuevo',capacity:'128 GB',currency:'USD',price:100,color:'Teal'};
+ const html=boot('#producto/'+p.id+'/Teal',{...catalog,products:[p]}).node('product-detail').innerHTML;
  assert.ok(html.includes(colorImages[p.model].teal.slice(1)));
  assert.ok(html.includes('data-selected-color="Teal"'));
 });
