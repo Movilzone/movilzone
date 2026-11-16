@@ -1,7 +1,7 @@
 const norm=s=>String(s||'').replace(/\+/g,' plus ').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const slug=s=>String(s).replace(/\+/g,' plus ').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 function matrix(csv){if(csv.length>1000000)throw Error('size');const rows=[];let row=[],v='',q=false;for(let i=0;i<csv.length;i++){const c=csv[i];if(c==='"'){if(q&&csv[i+1]==='"'){v+='"';i++;}else q=!q;}else if(c===','&&!q){row.push(v);v='';}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&csv[i+1]==='\n')i++;row.push(v);rows.push(row);row=[];v='';}else v+=c;}if(q)throw Error('csv');row.push(v);if(row.some(Boolean))rows.push(row);return rows;}
-function amount(v){const s=String(v||'').replace(/US\$|U\$|\$|\s/g,'').replace(/,/g,'');return /^\d+(\.\d+)?$/.test(s)&&Number(s)>0?Number(s):null;}
+function amount(v){let s=String(v||'').replace(/US\$|U\$|\$|\s/g,'').replace(/,/g,'');if(/^\d{1,3}(?:\.\d{3})+$/.test(s))s=s.replace(/\./g,'');return /^\d+(\.\d+)?$/.test(s)&&Number(s)>0?Number(s):null;}
 export function liveCatalog(csv,baseline,modelImages={}){
  const rows=matrix(csv),header=rows.findIndex(r=>r.slice(0,8).join('|')==='MODELO|DETALLE|USD|PESOS|3 CUOTAS|6 CUOTAS|CATEGORÍA|DISPONIBILIDAD');if(header<0)throw Error('layout');
  const categories={USADO:'Apple',ACTIVADO:'Apple',SELLADO:'Apple',SAMSUNG:'Samsung',MOTOROLA:'Motorola',XIAOMI:'Xiaomi',POCO:'Xiaomi',MACBOOK:'Apple',IPAD:'Apple',AIRPODS:'Apple'};
@@ -28,15 +28,15 @@ export function liveCatalog(csv,baseline,modelImages={}){
   const p={id,brand:androidBrand||categories[category],model,capacity,color,state,battery:old?.battery??null,price,currency:'USD',availability:'consultar',offer:false,image:photo,publicNotes:notes.join(' '),priceARS:amount(ars),installments3:amount(q3),installments6:amount(q6)};if(ram)p.ram=ram;products.push(p);
  }
  if(products.length<5)throw Error('empty');
- const offerRows=rows.slice(0,header).filter(r=>/OFERTA\s*·?\s*U\$[\d,]+/.test(r[6]||''));
+ const offerRows=rows.slice(0,header).filter(r=>/OFERTA\s*·?\s*U\$[\d.,]+/.test(r[6]||''));
  for(const row of offerRows){
-  const title=String(row[0]||''),parts=title.split(' · '),model=norm(parts[0].replace(/\bUSADO\b|\bSELLADO\b|\bNUEVO\b|\bACTIVADO\b/gi,'')),capacity=norm(parts[1]);
+  const title=String(row[0]||''),parts=title.split(' · '),model=norm(parts[0].replace(/\bUSADO\b|\bSELLADO\b|\bNUEVO\b|\bACTIVADO\b/gi,'')),capacity=norm(parts[1]),offerColor=parts.slice(2).join(' · ').trim().toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
   const state=/USADO/i.test(title)?'usado':/ACTIVADO/i.test(title)?'activado':/AS\s*IS/i.test(title)?'asis':/NUEVO|SELLADO/i.test(title)?'nuevo':null;
-  const matches=products.filter(p=>norm(p.model)===model&&norm(p.capacity)===capacity&&(!state||p.state===state));
+  const matches=products.filter(p=>norm(p.model)===model&&norm(p.capacity)===capacity&&(!state||p.state===state)&&(!offerColor||String(p.color).split('/').some(c=>norm(c)===norm(offerColor))));
   if(!matches.length||(!state&&new Set(matches.map(p=>p.state)).size>1))continue;
-  const original=matches[0],price=amount(row[6].match(/U\$([\d,]+)/)?.[1]),regularPrice=amount((row[4]||'').match(/U\$([\d,]+)/)?.[1]);
+  const original=matches[0],price=amount(row[6].match(/U\$([\d.,]+)/)?.[1]),regularPrice=amount((row[4]||'').match(/U\$([\d.,]+)/)?.[1]);
   if(!price)continue;
-  const offer={...original,id:original.id+'-unidades-seleccionadas',price,offer:true,priceARS:null,installments3:null,installments6:null,publicNotes:'Oferta sujeta a disponibilidad. Consultá condiciones y estado de cada equipo. Unidades seleccionadas.'};
+  const offer={...original,color:offerColor||original.color,id:original.id+'-unidades-seleccionadas',price,offer:true,priceARS:null,installments3:null,installments6:null,publicNotes:'Oferta sujeta a disponibilidad. Consultá condiciones y estado de cada equipo. Unidades seleccionadas.'};
   if(regularPrice&&regularPrice>price)offer.regularPrice=regularPrice;
   products.unshift(offer);
  }

@@ -32,3 +32,14 @@ test('clasifica equipos sellados por su marca sin cambiar condición ni precio',
  ]);
  assert.equal(products[0].priceARS,759025);
 });
+
+test('lee miles con punto y conserva el color de una oferta seleccionada',()=>{
+ const csv=['IPHONE 17 PRO MAX SELLADO · 256GB · BLUE,,,,PRECIO HABITUAL · U$1.400,,OFERTA · U$1.300,',head,...rows,
+ 'IPHONE 17 PRO MAX ORANGE / BLUE,256GB,1300,,,,SELLADO,DISPONIBLE',
+ 'IPHONE 17 PRO MAX SILVER,256GB,1335,,,,SELLADO,DISPONIBLE'].join('\n');
+ const offer=liveCatalog(csv,baseline).products.find(p=>p.offer);
+ assert.equal(offer.price,1300);assert.equal(offer.regularPrice,1400);
+ assert.equal(offer.color,'Blue');assert.equal(offer.state,'nuevo');
+ const withdrawn=liveCatalog([head,...rows].join('\n'),baseline);
+ assert.equal(withdrawn.products.filter(p=>p.offer).length,0);
+});

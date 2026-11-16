@@ -99,7 +99,8 @@
   "iPad A16 11”": {
     "pink": "/assets/products/colors/ipad-a16-11-pink.webp",
     "blue": "/assets/products/colors/ipad-a16-11-blue.webp",
-    "silver": "/assets/products/colors/ipad-a16-11-silver.webp"
+    "silver": "/assets/products/colors/ipad-a16-11-silver.webp",
+    "yellow": "/assets/products/colors/ipad-a16-11-yellow.webp"
   },
   "iPad Pro M5 11”": {
     "space": "/assets/products/colors/ipad-pro-m5-11-space.webp"
@@ -113,12 +114,14 @@
   "iPad A16": {
     "pink": "/assets/products/colors/ipad-a16-11-pink.webp",
     "blue": "/assets/products/colors/ipad-a16-11-blue.webp",
-    "silver": "/assets/products/colors/ipad-a16-11-silver.webp"
+    "silver": "/assets/products/colors/ipad-a16-11-silver.webp",
+    "yellow": "/assets/products/colors/ipad-a16-11-yellow.webp"
   },
   "MacBook Neo 13”": {
     "citrus": "/assets/products/macbook-neo-a18-13-citrus.webp",
     "silver": "/assets/products/macbook-neo-a18-13-silver.webp",
-    "indigo": "/assets/products/colors/macbook-neo-13-indigo.webp"
+    "indigo": "/assets/products/colors/macbook-neo-13-indigo.webp",
+    "blush": "/assets/products/colors/macbook-neo-13-blush.webp"
   },
   "MacBook Air M4 13”": {
     "blue": "/assets/products/colors/macbook-air-m4-13-blue.webp",
