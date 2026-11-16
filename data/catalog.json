@@ -98,15 +98,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 360,
+      "price": 350,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-13.webp",
       "publicNotes": "",
-      "priceARS": 579600,
-      "installments3": 264642,
-      "installments6": 152506
+      "priceARS": 563500,
+      "installments3": 257291,
+      "installments6": 148269
     },
     {
       "id": "iphone-13-256gb-usado",
@@ -188,15 +188,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 550,
+      "price": 520,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-13-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 885500,
-      "installments3": 404315,
-      "installments6": 232995
+      "priceARS": 837200,
+      "installments3": 382261,
+      "installments6": 220286
     },
     {
       "id": "iphone-13-pro-max-512gb-usado",
@@ -296,15 +296,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 540,
+      "price": 490,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-14-pro.webp",
       "publicNotes": "",
-      "priceARS": 869400,
-      "installments3": 396964,
-      "installments6": 228759
+      "priceARS": 788900,
+      "installments3": 360208,
+      "installments6": 207577
     },
     {
       "id": "iphone-14-pro-256gb-usado",
@@ -386,15 +386,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 490,
+      "price": 470,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-15.webp",
       "publicNotes": "",
-      "priceARS": 788900,
-      "installments3": 360208,
-      "installments6": 207577
+      "priceARS": 756700,
+      "installments3": 345505,
+      "installments6": 199105
     },
     {
       "id": "iphone-15-plus-128gb-usado",
@@ -422,15 +422,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 650,
+      "price": 630,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-15-pro.webp",
       "publicNotes": "",
-      "priceARS": 1046500,
-      "installments3": 477826,
-      "installments6": 275358
+      "priceARS": 1014300,
+      "installments3": 463124,
+      "installments6": 266885
     },
     {
       "id": "iphone-15-pro-256gb-usado",
@@ -458,15 +458,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 750,
+      "price": 680,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-15-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 1207500,
-      "installments3": 551338,
-      "installments6": 317720
+      "priceARS": 1094800,
+      "installments3": 499880,
+      "installments6": 288066
     },
     {
       "id": "iphone-16-128gb-usado",
@@ -476,15 +476,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 650,
+      "price": 645,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-16.webp",
       "publicNotes": "",
-      "priceARS": 1046500,
-      "installments3": 477826,
-      "installments6": 275358
+      "priceARS": 1038450,
+      "installments3": 474151,
+      "installments6": 273240
     },
     {
       "id": "iphone-16-plus-128gb-usado",
@@ -512,15 +512,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 790,
+      "price": 760,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-16-pro.webp",
       "publicNotes": "",
-      "priceARS": 1271900,
-      "installments3": 580743,
-      "installments6": 334665
+      "priceARS": 1223600,
+      "installments3": 558689,
+      "installments6": 321957
     },
     {
       "id": "iphone-16-pro-256gb-usado",
@@ -530,15 +530,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 830,
+      "price": 800,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-16-pro.webp",
       "publicNotes": "",
-      "priceARS": 1336300,
-      "installments3": 610148,
-      "installments6": 351611
+      "priceARS": 1288000,
+      "installments3": 588094,
+      "installments6": 338902
     },
     {
       "id": "iphone-16-pro-max-256gb-usado",
@@ -548,15 +548,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 890,
+      "price": 860,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-16-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 1432900,
-      "installments3": 654255,
-      "installments6": 377028
+      "priceARS": 1384600,
+      "installments3": 632201,
+      "installments6": 364319
     },
     {
       "id": "iphone-17-512gb-usado",
@@ -2953,7 +2953,7 @@
     }
   ],
   "sourceLabel": "Actualizada · 16/11/2026",
-  "checkedAt": "2026-11-16T20:35:14.858Z",
+  "checkedAt": "2026-11-16T21:18:07.161Z",
   "live": false,
   "sourceMode": "scheduled-sheet"
 }
