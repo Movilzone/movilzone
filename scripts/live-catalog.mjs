@@ -1,6 +1,7 @@
 const norm=s=>String(s||'').replace(/\+/g,' plus ').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]/g,'');
 const slug=s=>String(s).replace(/\+/g,' plus ').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
 function matrix(csv){if(csv.length>1000000)throw Error('size');const rows=[];let row=[],v='',q=false;for(let i=0;i<csv.length;i++){const c=csv[i];if(c==='"'){if(q&&csv[i+1]==='"'){v+='"';i++;}else q=!q;}else if(c===','&&!q){row.push(v);v='';}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&csv[i+1]==='\n')i++;row.push(v);rows.push(row);row=[];v='';}else v+=c;}if(q)throw Error('csv');row.push(v);if(row.some(Boolean))rows.push(row);return rows;}
+const colorNames=s=>String(s).replace(/AZUL GLACIAR/gi,'GLACIER BLUE').replace(/\b(GLACIAR|NEGRO|GRIS|CEREZA|AZUL|BLANCO)\b/gi,c=>({GLACIAR:'GLACIER',NEGRO:'BLACK',GRIS:'GREY',CEREZA:'CHERRY',AZUL:'BLUE',BLANCO:'WHITE'}[c.toUpperCase()]));
 function amount(v){let s=String(v||'').replace(/US\$|U\$|\$|\s/g,'').replace(/,/g,'');if(/^\d{1,3}(?:\.\d{3})+$/.test(s))s=s.replace(/\./g,'');return /^\d+(\.\d+)?$/.test(s)&&Number(s)>0?Number(s):null;}
 export function liveCatalog(csv,baseline,modelImages={}){
  const rows=matrix(csv),header=rows.findIndex(r=>r.slice(0,8).join('|')==='MODELO|DETALLE|USD|PESOS|3 CUOTAS|6 CUOTAS|CATEGORÍA|DISPONIBILIDAD');if(header<0)throw Error('layout');
@@ -10,7 +11,7 @@ export function liveCatalog(csv,baseline,modelImages={}){
  for(const r of rows.slice(header+1)){
   const [name,detail,usd,ars,q3,q6,category]=r;if(!categories[category]||!name||String(name).startsWith('REDMI PAD'))continue;
   const price=amount(usd);if(!price)continue;
-  const parts=name.split(' · '),raw=parts[0].replace(/\s*\.\s*AS\s*IS\s*$/i,'').trim();const colorMatch=raw.match(/\s(SKY BLUE|LIGHT BLUE|AWESOME CHARCOAL|CHARCOAL|GOLD CYPRESS|BLACK|WHITE|BLUE|SILVER|SAGE|LAVENDER|ORANGE|GLACIER|BURGUNDY|GREY|GRAY|PINK|GREEN|PURPLE|GOLD|CITRUS|INDIGO|BLUSH|MIDNIGHT|SPACE|STARLIGHT|NAVY|VIOLET|CHERRY|SPELLBOUND|TEAL)\b/i);
+  const parts=name.split(' · '),raw=colorNames(parts[0]).replace(/\s*\.\s*AS\s*IS\s*$/i,'').replace(/\s+TODOS LOS COLORES\s*$/i,'').trim();const colorMatch=raw.match(/\s(SKY BLUE|LIGHT BLUE|AWESOME CHARCOAL|CHARCOAL|GOLD CYPRESS|BLACK|WHITE|BLUE|SILVER|SAGE|LAVENDER|ORANGE|GLACIER|BURGUNDY|GREY|GRAY|PINK|GREEN|PURPLE|GOLD|CITRUS|INDIGO|BLUSH|MIDNIGHT|SPACE|STARLIGHT|NAVY|VIOLET|CHERRY|SPELLBOUND|TEAL)\b/i);
   const modelText=(colorMatch?raw.slice(0,colorMatch.index):raw).trim();
   let model=known.find(m=>norm(m)===norm(modelText))||modelText.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()).replace(/^Iphone/,'iPhone').replace(/^Ipad/,'iPad').replace(/^Macbook/,'MacBook').replace(/^Airpods/,'AirPods').replace(/Poco/g,'POCO').replace(/\b5g\b/g,'5G').replace(/17t\b/g,'17T');
   model=model.replace(/\b5g\b/gi,'5G').replace(/17t\b/gi,'17T');
@@ -30,7 +31,7 @@ export function liveCatalog(csv,baseline,modelImages={}){
  if(products.length<5)throw Error('empty');
  const offerRows=rows.slice(0,header).filter(r=>/OFERTA\s*·?\s*U\$[\d.,]+/.test(r[6]||''));
  for(const row of offerRows){
-  const title=String(row[0]||''),parts=title.split(' · '),model=norm(parts[0].replace(/\bUSADO\b|\bSELLADO\b|\bNUEVO\b|\bACTIVADO\b/gi,'')),capacity=norm(parts[1]),offerColor=parts.slice(2).join(' · ').trim().toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
+  const title=String(row[0]||''),parts=title.split(' · '),model=norm(parts[0].replace(/\bUSADO\b|\bSELLADO\b|\bNUEVO\b|\bACTIVADO\b/gi,'')),capacity=norm(parts[1]),offerColor=colorNames(parts.slice(2).join(' · ')).trim().toLowerCase().replace(/\b\w/g,c=>c.toUpperCase());
   const state=/USADO/i.test(title)?'usado':/ACTIVADO/i.test(title)?'activado':/AS\s*IS/i.test(title)?'asis':/NUEVO|SELLADO/i.test(title)?'nuevo':null;
   const matches=products.filter(p=>norm(p.model)===model&&norm(p.capacity)===capacity&&(!state||p.state===state)&&(!offerColor||String(p.color).split('/').some(c=>norm(c)===norm(offerColor))));
   if(!matches.length||(!state&&new Set(matches.map(p=>p.state)).size>1))continue;

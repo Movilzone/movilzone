@@ -43,3 +43,16 @@ test('lee miles con punto y conserva el color de una oferta seleccionada',()=>{
  const withdrawn=liveCatalog([head,...rows].join('\n'),baseline);
  assert.equal(withdrawn.products.filter(p=>p.offer).length,0);
 });
+
+test('separa colores en español del modelo sin alterar precios ni inventar variantes',()=>{
+ const csv=[head,...rows,
+ 'IPHONE 18 PRO MAX GLACIAR / BLACK,256GB,1555,,,,SELLADO,DISPONIBLE',
+ 'REDMI NOTE 15 PRO AZUL GLACIAR,8/256GB,360,,,,XIAOMI,DISPONIBLE',
+ 'MOTOROLA MOTO G86 POWER 5G CEREZA,8/256GB,360,,,,MOTOROLA,DISPONIBLE',
+ 'SAMSUNG GALAXY A37 5G BLANCO,8/256GB,445,,,,SAMSUNG,DISPONIBLE',
+ 'IPHONE 17 TODOS LOS COLORES,256GB,1035,,,,SELLADO,DISPONIBLE'].join('\n');
+ const products=liveCatalog(csv,baseline).products;
+ for(const [model,color,price] of [['iPhone 18 Pro Max','Glacier / Black',1555],['Redmi Note 15 Pro','Glacier Blue',360],['Motorola Moto G86 Power 5G','Cherry',360],['Samsung Galaxy A37 5G','White',445],['iPhone 17','',1035]]){
+  const p=products.find(p=>p.model===model&&p.price===price);assert.ok(p,model);assert.equal(p.color,color);
+ }
+});
