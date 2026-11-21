@@ -890,15 +890,15 @@
       "color": "Glacier / Black / Silver",
       "state": "nuevo",
       "battery": null,
-      "price": 1540,
+      "price": 1520,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-18-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2594900,
-      "installments3": 1184492,
-      "installments6": 682589
+      "priceARS": 2561200,
+      "installments3": 1169109,
+      "installments6": 673724
     },
     {
       "id": "iphone-18-pro-max-256gb-burgundy-nuevo",
@@ -908,15 +908,15 @@
       "color": "Burgundy",
       "state": "nuevo",
       "battery": null,
-      "price": 1565,
+      "price": 1520,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-18-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2637025,
-      "installments3": 1203721,
-      "installments6": 693670
+      "priceARS": 2561200,
+      "installments3": 1169109,
+      "installments6": 673724
     },
     {
       "id": "iphone-18-pro-max-512gb-glacier-black-nuevo",
@@ -2758,7 +2758,7 @@
     }
   ],
   "sourceLabel": "Actualizada · 20/11/2026",
-  "checkedAt": "2026-11-21T01:39:45.429Z",
+  "checkedAt": "2026-11-21T16:27:47.786Z",
   "live": false,
   "sourceMode": "scheduled-sheet"
 }
