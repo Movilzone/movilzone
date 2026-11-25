@@ -68,9 +68,9 @@
       "offer": false,
       "image": "/assets/products/iphone-11.webp",
       "publicNotes": "",
-      "priceARS": 307800,
-      "installments3": 140489,
-      "installments6": 80960
+      "priceARS": 313200,
+      "installments3": 142940,
+      "installments6": 82372
     },
     {
       "id": "iphone-12-pro-max-256gb-usado",
@@ -86,9 +86,9 @@
       "offer": false,
       "image": "/assets/products/iphone-12-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 991800,
-      "installments3": 452687,
-      "installments6": 260871
+      "priceARS": 1009200,
+      "installments3": 460583,
+      "installments6": 265421
     },
     {
       "id": "iphone-13-128gb-usado",
@@ -104,9 +104,9 @@
       "offer": false,
       "image": "/assets/products/iphone-13.webp",
       "publicNotes": "",
-      "priceARS": 598500,
-      "installments3": 273173,
-      "installments6": 157422
+      "priceARS": 609000,
+      "installments3": 277938,
+      "installments6": 160168
     },
     {
       "id": "iphone-13-256gb-usado",
@@ -122,9 +122,9 @@
       "offer": false,
       "image": "/assets/products/iphone-13.webp",
       "publicNotes": "",
-      "priceARS": 666900,
-      "installments3": 304393,
-      "installments6": 175413
+      "priceARS": 678600,
+      "installments3": 309702,
+      "installments6": 178473
     },
     {
       "id": "iphone-13-pro-128gb-usado",
@@ -140,9 +140,9 @@
       "offer": false,
       "image": "/assets/products/iphone-13-pro.webp",
       "publicNotes": "",
-      "priceARS": 718200,
-      "installments3": 327808,
-      "installments6": 188906
+      "priceARS": 730800,
+      "installments3": 333526,
+      "installments6": 192201
     },
     {
       "id": "iphone-13-pro-256gb-usado",
@@ -158,9 +158,9 @@
       "offer": false,
       "image": "/assets/products/iphone-13-pro.webp",
       "publicNotes": "",
-      "priceARS": 872100,
-      "installments3": 398053,
-      "installments6": 229386
+      "priceARS": 887400,
+      "installments3": 404995,
+      "installments6": 233387
     },
     {
       "id": "iphone-13-pro-max-128gb-usado",
@@ -176,9 +176,9 @@
       "offer": false,
       "image": "/assets/products/iphone-13-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 906300,
-      "installments3": 413663,
-      "installments6": 238382
+      "priceARS": 922200,
+      "installments3": 420878,
+      "installments6": 242540
     },
     {
       "id": "iphone-13-pro-max-256gb-usado",
@@ -194,9 +194,9 @@
       "offer": false,
       "image": "/assets/products/iphone-13-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 889200,
-      "installments3": 405858,
-      "installments6": 233884
+      "priceARS": 904800,
+      "installments3": 412936,
+      "installments6": 237963
     },
     {
       "id": "iphone-13-pro-max-512gb-usado",
@@ -212,9 +212,9 @@
       "offer": false,
       "image": "/assets/products/iphone-13-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 1043100,
-      "installments3": 476102,
-      "installments6": 274364
+      "priceARS": 1061400,
+      "installments3": 484406,
+      "installments6": 279149
     },
     {
       "id": "iphone-14-128gb-usado",
@@ -230,9 +230,9 @@
       "offer": false,
       "image": "/assets/products/iphone-14.webp",
       "publicNotes": "",
-      "priceARS": 666900,
-      "installments3": 304393,
-      "installments6": 175413
+      "priceARS": 678600,
+      "installments3": 309702,
+      "installments6": 178473
     },
     {
       "id": "iphone-14-256gb-usado",
@@ -248,9 +248,9 @@
       "offer": false,
       "image": "/assets/products/iphone-14.webp",
       "publicNotes": "",
-      "priceARS": 718200,
-      "installments3": 327808,
-      "installments6": 188906
+      "priceARS": 730800,
+      "installments3": 333526,
+      "installments6": 192201
     },
     {
       "id": "iphone-14-plus-128gb-usado",
@@ -266,9 +266,9 @@
       "offer": false,
       "image": "/assets/products/iphone-14-plus.webp",
       "publicNotes": "",
-      "priceARS": 718200,
-      "installments3": 327808,
-      "installments6": 188906
+      "priceARS": 730800,
+      "installments3": 333526,
+      "installments6": 192201
     },
     {
       "id": "iphone-14-plus-256gb-usado",
@@ -284,9 +284,9 @@
       "offer": false,
       "image": "/assets/products/iphone-14-plus.webp",
       "publicNotes": "",
-      "priceARS": 940500,
-      "installments3": 429272,
-      "installments6": 247377
+      "priceARS": 957000,
+      "installments3": 436760,
+      "installments6": 251692
     },
     {
       "id": "iphone-14-pro-128gb-usado",
@@ -302,9 +302,9 @@
       "offer": false,
       "image": "/assets/products/iphone-14-pro.webp",
       "publicNotes": "",
-      "priceARS": 837900,
-      "installments3": 382443,
-      "installments6": 220391
+      "priceARS": 852600,
+      "installments3": 389113,
+      "installments6": 224235
     },
     {
       "id": "iphone-14-pro-256gb-usado",
@@ -320,9 +320,9 @@
       "offer": false,
       "image": "/assets/products/iphone-14-pro.webp",
       "publicNotes": "",
-      "priceARS": 974700,
-      "installments3": 444882,
-      "installments6": 256373
+      "priceARS": 991800,
+      "installments3": 452642,
+      "installments6": 260844
     },
     {
       "id": "iphone-14-pro-max-128gb-usado",
@@ -338,9 +338,9 @@
       "offer": false,
       "image": "/assets/products/iphone-14-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 1026000,
-      "installments3": 468297,
-      "installments6": 269866
+      "priceARS": 1044000,
+      "installments3": 476465,
+      "installments6": 274573
     },
     {
       "id": "iphone-14-pro-max-256gb-usado",
@@ -356,9 +356,9 @@
       "offer": false,
       "image": "/assets/products/iphone-14-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 1043100,
-      "installments3": 476102,
-      "installments6": 274364
+      "priceARS": 1061400,
+      "installments3": 484406,
+      "installments6": 279149
     },
     {
       "id": "iphone-14-pro-max-512gb-usado",
@@ -374,9 +374,9 @@
       "offer": false,
       "image": "/assets/products/iphone-14-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 1145700,
-      "installments3": 522932,
-      "installments6": 301351
+      "priceARS": 1165800,
+      "installments3": 532053,
+      "installments6": 306607
     },
     {
       "id": "iphone-15-128gb-usado",
@@ -392,9 +392,9 @@
       "offer": false,
       "image": "/assets/products/iphone-15.webp",
       "publicNotes": "",
-      "priceARS": 803700,
-      "installments3": 366833,
-      "installments6": 211395
+      "priceARS": 817800,
+      "installments3": 373231,
+      "installments6": 215082
     },
     {
       "id": "iphone-15-plus-128gb-usado",
@@ -410,9 +410,9 @@
       "offer": false,
       "image": "/assets/products/iphone-15-plus.webp",
       "publicNotes": "",
-      "priceARS": 940500,
-      "installments3": 429272,
-      "installments6": 247377
+      "priceARS": 957000,
+      "installments3": 436760,
+      "installments6": 251692
     },
     {
       "id": "iphone-15-pro-128gb-usado",
@@ -428,9 +428,9 @@
       "offer": false,
       "image": "/assets/products/iphone-15-pro.webp",
       "publicNotes": "",
-      "priceARS": 1077300,
-      "installments3": 491712,
-      "installments6": 283359
+      "priceARS": 1096200,
+      "installments3": 500288,
+      "installments6": 288302
     },
     {
       "id": "iphone-15-pro-256gb-usado",
@@ -446,9 +446,9 @@
       "offer": false,
       "image": "/assets/products/iphone-15-pro.webp",
       "publicNotes": "",
-      "priceARS": 1162800,
-      "installments3": 530737,
-      "installments6": 305848
+      "priceARS": 1183200,
+      "installments3": 539994,
+      "installments6": 311183
     },
     {
       "id": "iphone-15-pro-max-256gb-usado",
@@ -464,9 +464,9 @@
       "offer": false,
       "image": "/assets/products/iphone-15-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 1162800,
-      "installments3": 530737,
-      "installments6": 305848
+      "priceARS": 1183200,
+      "installments3": 539994,
+      "installments6": 311183
     },
     {
       "id": "iphone-16-128gb-usado",
@@ -482,9 +482,9 @@
       "offer": false,
       "image": "/assets/products/iphone-16.webp",
       "publicNotes": "",
-      "priceARS": 1102950,
-      "installments3": 503419,
-      "installments6": 290106
+      "priceARS": 1122300,
+      "installments3": 512200,
+      "installments6": 295166
     },
     {
       "id": "iphone-16-plus-128gb-usado",
@@ -500,9 +500,9 @@
       "offer": false,
       "image": "/assets/products/iphone-16-plus.webp",
       "publicNotes": "",
-      "priceARS": 1214100,
-      "installments3": 554152,
-      "installments6": 319342
+      "priceARS": 1235400,
+      "installments3": 563817,
+      "installments6": 324912
     },
     {
       "id": "iphone-16-pro-128gb-usado",
@@ -518,9 +518,9 @@
       "offer": false,
       "image": "/assets/products/iphone-16-pro.webp",
       "publicNotes": "",
-      "priceARS": 1299600,
-      "installments3": 593176,
-      "installments6": 341830
+      "priceARS": 1322400,
+      "installments3": 603523,
+      "installments6": 347793
     },
     {
       "id": "iphone-16-pro-256gb-usado",
@@ -536,9 +536,9 @@
       "offer": false,
       "image": "/assets/products/iphone-16-pro.webp",
       "publicNotes": "",
-      "priceARS": 1368000,
-      "installments3": 624396,
-      "installments6": 359822
+      "priceARS": 1392000,
+      "installments3": 635287,
+      "installments6": 366098
     },
     {
       "id": "iphone-16-pro-max-256gb-usado",
@@ -554,9 +554,9 @@
       "offer": false,
       "image": "/assets/products/iphone-16-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 1470600,
-      "installments3": 671226,
-      "installments6": 386808
+      "priceARS": 1496400,
+      "installments3": 682933,
+      "installments6": 393555
     },
     {
       "id": "iphone-17-512gb-usado",
@@ -572,9 +572,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17.webp",
       "publicNotes": "",
-      "priceARS": 1727100,
-      "installments3": 788300,
-      "installments6": 454275
+      "priceARS": 1757400,
+      "installments3": 802050,
+      "installments6": 462198
     },
     {
       "id": "iphone-17-pro-256gb-asis",
@@ -590,9 +590,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro.webp",
       "publicNotes": "Condición AS IS. Consultá detalles del equipo antes de comprar.",
-      "priceARS": 2000700,
-      "installments3": 913180,
-      "installments6": 526239
+      "priceARS": 2035800,
+      "installments3": 929107,
+      "installments6": 535418
     },
     {
       "id": "iphone-17-pro-512gb-asis",
@@ -608,9 +608,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro.webp",
       "publicNotes": "Condición AS IS. Consultá detalles del equipo antes de comprar.",
-      "priceARS": 2163150,
-      "installments3": 987327,
-      "installments6": 568968
+      "priceARS": 2201100,
+      "installments3": 1004547,
+      "installments6": 578892
     },
     {
       "id": "iphone-17-pro-max-256gb-usado",
@@ -626,9 +626,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2103300,
-      "installments3": 960009,
-      "installments6": 553226
+      "priceARS": 2140200,
+      "installments3": 976754,
+      "installments6": 562875
     },
     {
       "id": "iphone-16-128gb-black-nuevo",
@@ -644,9 +644,9 @@
       "offer": false,
       "image": "/assets/products/iphone-16.webp",
       "publicNotes": "",
-      "priceARS": 1470600,
-      "installments3": 671226,
-      "installments6": 386808
+      "priceARS": 1496400,
+      "installments3": 682933,
+      "installments6": 393555
     },
     {
       "id": "iphone-17-256gb-nuevo",
@@ -656,15 +656,15 @@
       "color": "",
       "state": "nuevo",
       "battery": null,
-      "price": 1025,
+      "price": 1010,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-17.webp",
       "publicNotes": "",
-      "priceARS": 1752750,
-      "installments3": 800008,
-      "installments6": 461021
+      "priceARS": 1757400,
+      "installments3": 802050,
+      "installments6": 462198
     },
     {
       "id": "iphone-17-pro-512gb-orange-nuevo",
@@ -680,9 +680,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro.webp",
       "publicNotes": "",
-      "priceARS": 2479500,
-      "installments3": 1131718,
-      "installments6": 652177
+      "priceARS": 2523000,
+      "installments3": 1151457,
+      "installments6": 663552
     },
     {
       "id": "iphone-17-pro-max-256gb-orange-nuevo",
@@ -698,9 +698,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2308500,
-      "installments3": 1053669,
-      "installments6": 607199
+      "priceARS": 2349000,
+      "installments3": 1072047,
+      "installments6": 617790
     },
     {
       "id": "iphone-17-pro-max-256gb-blue-nuevo",
@@ -716,9 +716,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2308500,
-      "installments3": 1053669,
-      "installments6": 607199
+      "priceARS": 2349000,
+      "installments3": 1072047,
+      "installments6": 617790
     },
     {
       "id": "iphone-17-pro-max-256gb-silver-nuevo",
@@ -734,9 +734,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2368350,
-      "installments3": 1080986,
-      "installments6": 622941
+      "priceARS": 2409900,
+      "installments3": 1099840,
+      "installments6": 633806
     },
     {
       "id": "iphone-17-pro-max-512gb-orange-nuevo",
@@ -752,9 +752,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2650500,
-      "installments3": 1209768,
-      "installments6": 697154
+      "priceARS": 2697000,
+      "installments3": 1230868,
+      "installments6": 709314
     },
     {
       "id": "iphone-17-pro-max-512gb-blue-nuevo",
@@ -770,9 +770,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2667600,
-      "installments3": 1217573,
-      "installments6": 701652
+      "priceARS": 2714400,
+      "installments3": 1238809,
+      "installments6": 713890
     },
     {
       "id": "iphone-17-pro-max-512gb-silver-nuevo",
@@ -788,9 +788,9 @@
       "offer": false,
       "image": "/assets/products/iphone-17-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2684700,
-      "installments3": 1225378,
-      "installments6": 706150
+      "priceARS": 2731800,
+      "installments3": 1246750,
+      "installments6": 718466
     },
     {
       "id": "iphone-18-pro-256gb-burgundy-black-silver-nuevo",
@@ -806,9 +806,9 @@
       "offer": false,
       "image": "/assets/products/iphone-18-pro.webp",
       "publicNotes": "",
-      "priceARS": 2376900,
-      "installments3": 1084888,
-      "installments6": 625190
+      "priceARS": 2418600,
+      "installments3": 1103811,
+      "installments6": 636094
     },
     {
       "id": "iphone-18-pro-256gb-glacier-nuevo",
@@ -824,9 +824,9 @@
       "offer": false,
       "image": "/assets/products/iphone-18-pro.webp",
       "publicNotes": "",
-      "priceARS": 2376900,
-      "installments3": 1084888,
-      "installments6": 625190
+      "priceARS": 2418600,
+      "installments3": 1103811,
+      "installments6": 636094
     },
     {
       "id": "iphone-18-pro-512gb-burgundy-nuevo",
@@ -842,9 +842,9 @@
       "offer": false,
       "image": "/assets/products/iphone-18-pro.webp",
       "publicNotes": "",
-      "priceARS": 2795850,
-      "installments3": 1276110,
-      "installments6": 735385
+      "priceARS": 2844900,
+      "installments3": 1298368,
+      "installments6": 748212
     },
     {
       "id": "iphone-18-pro-512gb-silver-nuevo",
@@ -860,9 +860,9 @@
       "offer": false,
       "image": "/assets/products/iphone-18-pro.webp",
       "publicNotes": "",
-      "priceARS": 2795850,
-      "installments3": 1276110,
-      "installments6": 735385
+      "priceARS": 2844900,
+      "installments3": 1298368,
+      "installments6": 748212
     },
     {
       "id": "iphone-18-pro-512gb-glacier-nuevo",
@@ -878,9 +878,9 @@
       "offer": false,
       "image": "/assets/products/iphone-18-pro.webp",
       "publicNotes": "",
-      "priceARS": 2821500,
-      "installments3": 1287817,
-      "installments6": 742132
+      "priceARS": 2871000,
+      "installments3": 1310279,
+      "installments6": 755076
     },
     {
       "id": "iphone-18-pro-max-256gb-glacier-black-silver-nuevo",
@@ -896,9 +896,9 @@
       "offer": false,
       "image": "/assets/products/iphone-18-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2599200,
-      "installments3": 1186353,
-      "installments6": 683661
+      "priceARS": 2644800,
+      "installments3": 1207045,
+      "installments6": 695585
     },
     {
       "id": "iphone-18-pro-max-256gb-burgundy-nuevo",
@@ -914,9 +914,9 @@
       "offer": false,
       "image": "/assets/products/iphone-18-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 2599200,
-      "installments3": 1186353,
-      "installments6": 683661
+      "priceARS": 2644800,
+      "installments3": 1207045,
+      "installments6": 695585
     },
     {
       "id": "iphone-18-pro-max-512gb-glacier-black-nuevo",
@@ -932,9 +932,9 @@
       "offer": false,
       "image": "/assets/products/iphone-18-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 3112200,
-      "installments3": 1420501,
-      "installments6": 818594
+      "priceARS": 3166800,
+      "installments3": 1445278,
+      "installments6": 832872
     },
     {
       "id": "iphone-18-pro-max-512gb-burgundy-nuevo",
@@ -950,9 +950,9 @@
       "offer": false,
       "image": "/assets/products/iphone-18-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 3129300,
-      "installments3": 1428306,
-      "installments6": 823092
+      "priceARS": 3184200,
+      "installments3": 1453219,
+      "installments6": 837448
     },
     {
       "id": "ipad-a16-128gb-pink-blue-yellow-nuevo",
@@ -968,9 +968,9 @@
       "offer": false,
       "image": "/assets/products/ipad-a16-11.webp",
       "publicNotes": "",
-      "priceARS": 940500,
-      "installments3": 429272,
-      "installments6": 247377
+      "priceARS": 957000,
+      "installments3": 436760,
+      "installments6": 251692
     },
     {
       "id": "ipad-a16-256gb-silver-nuevo",
@@ -986,9 +986,9 @@
       "offer": false,
       "image": "/assets/products/ipad-a16-11.webp",
       "publicNotes": "",
-      "priceARS": 1137150,
-      "installments3": 519029,
-      "installments6": 299102
+      "priceARS": 1157100,
+      "installments3": 528082,
+      "installments6": 304319
     },
     {
       "id": "ipad-air-m4-11-128gb-purple-nuevo",
@@ -1004,9 +1004,9 @@
       "offer": false,
       "image": "/assets/products/ipad-air-m4-11-starlight.webp",
       "publicNotes": "",
-      "priceARS": 1453500,
-      "installments3": 663421,
-      "installments6": 382310
+      "priceARS": 1479000,
+      "installments3": 674992,
+      "installments6": 388979
     },
     {
       "id": "ipad-air-m4-11-128gb-space-gray-starlight-nuevo",
@@ -1022,9 +1022,9 @@
       "offer": false,
       "image": "/assets/products/ipad-air-m4-11-starlight.webp",
       "publicNotes": "",
-      "priceARS": 1470600,
-      "installments3": 671226,
-      "installments6": 386808
+      "priceARS": 1496400,
+      "installments3": 682933,
+      "installments6": 393555
     },
     {
       "id": "ipad-air-m4-11-256gb-starlight-nuevo",
@@ -1040,9 +1040,9 @@
       "offer": false,
       "image": "/assets/products/ipad-air-m4-11-starlight.webp",
       "publicNotes": "",
-      "priceARS": 1615950,
-      "installments3": 737568,
-      "installments6": 425039
+      "priceARS": 1644300,
+      "installments3": 750433,
+      "installments6": 432453
     },
     {
       "id": "ipad-air-m4-13-256gb-nuevo",
@@ -1058,9 +1058,9 @@
       "offer": false,
       "image": "/assets/products/ipad-air-m4-13.webp",
       "publicNotes": "",
-      "priceARS": 1940850,
-      "installments3": 885862,
-      "installments6": 510497
+      "priceARS": 1974900,
+      "installments3": 901313,
+      "installments6": 519401
     },
     {
       "id": "ipad-pro-m5-11-256gb-space-nuevo",
@@ -1076,9 +1076,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 2308500,
-      "installments3": 1053669,
-      "installments6": 607199
+      "priceARS": 2349000,
+      "installments3": 1072047,
+      "installments6": 617790
     },
     {
       "id": "macbook-neo-13-8-256gb-indigo-citrus-nuevo",
@@ -1094,9 +1094,9 @@
       "offer": false,
       "image": "/assets/products/macbook-neo-a18-13-silver.webp",
       "publicNotes": "",
-      "priceARS": 1539000,
-      "installments3": 702446,
-      "installments6": 404799,
+      "priceARS": 1566000,
+      "installments3": 714698,
+      "installments6": 411860,
       "ram": "8 GB"
     },
     {
@@ -1113,9 +1113,9 @@
       "offer": false,
       "image": "/assets/products/macbook-neo-a18-13-silver.webp",
       "publicNotes": "",
-      "priceARS": 1710000,
-      "installments3": 780495,
-      "installments6": 449777,
+      "priceARS": 1740000,
+      "installments3": 794109,
+      "installments6": 457622,
       "ram": "8 GB"
     },
     {
@@ -1132,9 +1132,9 @@
       "offer": false,
       "image": "/assets/products/macbook-neo-a18-13-silver.webp",
       "publicNotes": "",
-      "priceARS": 1744200,
-      "installments3": 796105,
-      "installments6": 458772,
+      "priceARS": 1774800,
+      "installments3": 809991,
+      "installments6": 466774,
       "ram": "8 GB"
     },
     {
@@ -1151,9 +1151,9 @@
       "offer": false,
       "image": "/assets/products/macbook-air-m4-13.webp",
       "publicNotes": "",
-      "priceARS": 2154600,
-      "installments3": 983424,
-      "installments6": 566719,
+      "priceARS": 2192400,
+      "installments3": 1000577,
+      "installments6": 576604,
       "ram": "16 GB"
     },
     {
@@ -1170,9 +1170,9 @@
       "offer": false,
       "image": "/assets/products/macbook-m5-13.webp",
       "publicNotes": "",
-      "priceARS": 2462400,
-      "installments3": 1123913,
-      "installments6": 647679,
+      "priceARS": 2505600,
+      "installments3": 1143516,
+      "installments6": 658976,
       "ram": "16 GB"
     },
     {
@@ -1189,9 +1189,9 @@
       "offer": false,
       "image": "/assets/products/macbook-m5-13.webp",
       "publicNotes": "",
-      "priceARS": 2530800,
-      "installments3": 1155133,
-      "installments6": 665670,
+      "priceARS": 2575200,
+      "installments3": 1175281,
+      "installments6": 677280,
       "ram": "16 GB"
     },
     {
@@ -1208,9 +1208,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 256500,
-      "installments3": 117074,
-      "installments6": 67467
+      "priceARS": 261000,
+      "installments3": 119116,
+      "installments6": 68643
     },
     {
       "id": "apple-pencil-pro-nuevo",
@@ -1226,9 +1226,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 342000,
-      "installments3": 156099,
-      "installments6": 89955
+      "priceARS": 348000,
+      "installments3": 158822,
+      "installments6": 91524
     },
     {
       "id": "airpods-4-nuevo",
@@ -1244,9 +1244,9 @@
       "offer": false,
       "image": "/assets/products/airpods-4.webp",
       "publicNotes": "",
-      "priceARS": 307800,
-      "installments3": 140489,
-      "installments6": 80960
+      "priceARS": 313200,
+      "installments3": 142940,
+      "installments6": 82372
     },
     {
       "id": "airpods-4-con-cancelacion-nuevo",
@@ -1262,9 +1262,9 @@
       "offer": false,
       "image": "/assets/products/airpods-4-con-cancelaci-n.webp",
       "publicNotes": "",
-      "priceARS": 384750,
-      "installments3": 175611,
-      "installments6": 101200
+      "priceARS": 391500,
+      "installments3": 178674,
+      "installments6": 102965
     },
     {
       "id": "airpods-pro-3-nuevo",
@@ -1280,9 +1280,9 @@
       "offer": false,
       "image": "/assets/products/airpods-pro-3.webp",
       "publicNotes": "",
-      "priceARS": 504450,
-      "installments3": 230246,
-      "installments6": 132684
+      "priceARS": 513300,
+      "installments3": 234262,
+      "installments6": 134998
     },
     {
       "id": "airpods-5-nuevo",
@@ -1298,9 +1298,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 359100,
-      "installments3": 163904,
-      "installments6": 94453
+      "priceARS": 365400,
+      "installments3": 166763,
+      "installments6": 96101
     },
     {
       "id": "airpods-5-con-carga-inalambrica-con-carga-inalambrica-nuevo",
@@ -1316,9 +1316,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 393300,
-      "installments3": 179514,
-      "installments6": 103449
+      "priceARS": 400200,
+      "installments3": 182645,
+      "installments6": 105253
     },
     {
       "id": "airtag-pack-x4-nuevo",
@@ -1334,9 +1334,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 230850,
-      "installments3": 105367,
-      "installments6": 60720
+      "priceARS": 234900,
+      "installments3": 107205,
+      "installments6": 61779
     },
     {
       "id": "cable-original-nuevo",
@@ -1352,9 +1352,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 34200,
-      "installments3": 15610,
-      "installments6": 8996
+      "priceARS": 34800,
+      "installments3": 15882,
+      "installments6": 9152
     },
     {
       "id": "cargador-apple-20w-nuevo",
@@ -1370,9 +1370,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 42750,
-      "installments3": 19512,
-      "installments6": 11244
+      "priceARS": 43500,
+      "installments3": 19853,
+      "installments6": 11441
     },
     {
       "id": "motorola-moto-g06-4-64gb-nuevo",
@@ -1388,9 +1388,9 @@
       "offer": false,
       "image": "/assets/products/motorola-moto-g06.webp",
       "publicNotes": "",
-      "priceARS": 265050,
-      "installments3": 120977,
-      "installments6": 69715,
+      "priceARS": 269700,
+      "installments3": 123087,
+      "installments6": 70931,
       "ram": "4 GB"
     },
     {
@@ -1407,9 +1407,9 @@
       "offer": false,
       "image": "/assets/products/motorola-moto-g06.webp",
       "publicNotes": "",
-      "priceARS": 342000,
-      "installments3": 156099,
-      "installments6": 89955,
+      "priceARS": 348000,
+      "installments3": 158822,
+      "installments6": 91524,
       "ram": "4 GB"
     },
     {
@@ -1426,9 +1426,9 @@
       "offer": false,
       "image": "/assets/products/motorola-moto-g17.webp",
       "publicNotes": "",
-      "priceARS": 393300,
-      "installments3": 179514,
-      "installments6": 103449,
+      "priceARS": 400200,
+      "installments3": 182645,
+      "installments6": 105253,
       "ram": "4 GB"
     },
     {
@@ -1445,9 +1445,9 @@
       "offer": false,
       "image": "/assets/products/motorola-moto-g35-5g.webp",
       "publicNotes": "",
-      "priceARS": 410400,
-      "installments3": 187319,
-      "installments6": 107946,
+      "priceARS": 417600,
+      "installments3": 190586,
+      "installments6": 109829,
       "ram": "4 GB"
     },
     {
@@ -1464,9 +1464,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 444600,
-      "installments3": 202929,
-      "installments6": 116942,
+      "priceARS": 452400,
+      "installments3": 206468,
+      "installments6": 118982,
       "ram": "8 GB"
     },
     {
@@ -1483,9 +1483,9 @@
       "offer": false,
       "image": "/assets/products/motorola-moto-g57.webp",
       "publicNotes": "",
-      "priceARS": 521550,
-      "installments3": 238051,
-      "installments6": 137182,
+      "priceARS": 530700,
+      "installments3": 242203,
+      "installments6": 139575,
       "ram": "8 GB"
     },
     {
@@ -1502,9 +1502,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 453150,
-      "installments3": 206831,
-      "installments6": 119191,
+      "priceARS": 461100,
+      "installments3": 210439,
+      "installments6": 121270,
       "ram": "4 GB"
     },
     {
@@ -1521,9 +1521,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 607050,
-      "installments3": 277076,
-      "installments6": 159671,
+      "priceARS": 617700,
+      "installments3": 281909,
+      "installments6": 162456,
       "ram": "8 GB"
     },
     {
@@ -1540,9 +1540,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 615600,
-      "installments3": 280978,
-      "installments6": 161920,
+      "priceARS": 626400,
+      "installments3": 285879,
+      "installments6": 164744,
       "ram": "8 GB"
     },
     {
@@ -1559,9 +1559,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 624150,
-      "installments3": 284881,
-      "installments6": 164169,
+      "priceARS": 635100,
+      "installments3": 289850,
+      "installments6": 167032,
       "ram": "8 GB"
     },
     {
@@ -1578,9 +1578,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 666900,
-      "installments3": 304393,
-      "installments6": 175413,
+      "priceARS": 678600,
+      "installments3": 309702,
+      "installments6": 178473,
       "ram": "12 GB"
     },
     {
@@ -1597,9 +1597,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 675450,
-      "installments3": 308296,
-      "installments6": 177662,
+      "priceARS": 687300,
+      "installments3": 313673,
+      "installments6": 180761,
       "ram": "8 GB"
     },
     {
@@ -1616,9 +1616,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 547200,
-      "installments3": 249758,
-      "installments6": 143929,
+      "priceARS": 556800,
+      "installments3": 254115,
+      "installments6": 146439,
       "ram": "8 GB"
     },
     {
@@ -1635,9 +1635,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 615600,
-      "installments3": 280978,
-      "installments6": 161920,
+      "priceARS": 626400,
+      "installments3": 285879,
+      "installments6": 164744,
       "ram": "8 GB"
     },
     {
@@ -1654,9 +1654,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 769500,
-      "installments3": 351223,
-      "installments6": 202400,
+      "priceARS": 783000,
+      "installments3": 357349,
+      "installments6": 205930,
       "ram": "12 GB"
     },
     {
@@ -1673,9 +1673,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 812250,
-      "installments3": 370735,
-      "installments6": 213644,
+      "priceARS": 826500,
+      "installments3": 377202,
+      "installments6": 217370,
       "ram": "8 GB"
     },
     {
@@ -1692,9 +1692,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a17.webp",
       "publicNotes": "",
-      "priceARS": 453150,
-      "installments3": 206831,
-      "installments6": 119191,
+      "priceARS": 461100,
+      "installments3": 210439,
+      "installments6": 121270,
       "ram": "4 GB"
     },
     {
@@ -1711,9 +1711,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a17-5g.webp",
       "publicNotes": "",
-      "priceARS": 427500,
-      "installments3": 195124,
-      "installments6": 112444,
+      "priceARS": 435000,
+      "installments3": 198527,
+      "installments6": 114405,
       "ram": "4 GB"
     },
     {
@@ -1730,9 +1730,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a17.webp",
       "publicNotes": "",
-      "priceARS": 444600,
-      "installments3": 202929,
-      "installments6": 116942,
+      "priceARS": 452400,
+      "installments3": 206468,
+      "installments6": 118982,
       "ram": "6 GB"
     },
     {
@@ -1749,9 +1749,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a17-5g.webp",
       "publicNotes": "",
-      "priceARS": 658350,
-      "installments3": 300491,
-      "installments6": 173164,
+      "priceARS": 669900,
+      "installments3": 305732,
+      "installments6": 176184,
       "ram": "8 GB"
     },
     {
@@ -1768,9 +1768,9 @@
       "offer": false,
       "image": "/assets/products/colors/samsung-galaxy-a27-5g-black.webp",
       "publicNotes": "",
-      "priceARS": 701100,
-      "installments3": 320003,
-      "installments6": 184409,
+      "priceARS": 713400,
+      "installments3": 325585,
+      "installments6": 187625,
       "ram": "8 GB"
     },
     {
@@ -1787,9 +1787,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a27-5g.webp",
       "publicNotes": "",
-      "priceARS": 726750,
-      "installments3": 331711,
-      "installments6": 191155,
+      "priceARS": 739500,
+      "installments3": 337496,
+      "installments6": 194489,
       "ram": "8 GB"
     },
     {
@@ -1806,9 +1806,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 666900,
-      "installments3": 304393,
-      "installments6": 175413,
+      "priceARS": 678600,
+      "installments3": 309702,
+      "installments6": 178473,
       "ram": "8 GB"
     },
     {
@@ -1825,9 +1825,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a37-5g.webp",
       "publicNotes": "",
-      "priceARS": 726750,
-      "installments3": 331711,
-      "installments6": 191155,
+      "priceARS": 739500,
+      "installments3": 337496,
+      "installments6": 194489,
       "ram": "8 GB"
     },
     {
@@ -1844,9 +1844,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a37-5g.webp",
       "publicNotes": "",
-      "priceARS": 760950,
-      "installments3": 347320,
-      "installments6": 200151,
+      "priceARS": 774300,
+      "installments3": 353378,
+      "installments6": 203642,
       "ram": "8 GB"
     },
     {
@@ -1863,9 +1863,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a37-5g.webp",
       "publicNotes": "",
-      "priceARS": 803700,
-      "installments3": 366833,
-      "installments6": 211395,
+      "priceARS": 817800,
+      "installments3": 373231,
+      "installments6": 215082,
       "ram": "8 GB"
     },
     {
@@ -1882,9 +1882,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a56-5g.webp",
       "publicNotes": "",
-      "priceARS": 778050,
-      "installments3": 355125,
-      "installments6": 204649,
+      "priceARS": 791700,
+      "installments3": 361319,
+      "installments6": 208218,
       "ram": "8 GB"
     },
     {
@@ -1901,9 +1901,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 837900,
-      "installments3": 382443,
-      "installments6": 220391,
+      "priceARS": 852600,
+      "installments3": 389113,
+      "installments6": 224235,
       "ram": "12 GB"
     },
     {
@@ -1920,9 +1920,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 812250,
-      "installments3": 370735,
-      "installments6": 213644,
+      "priceARS": 826500,
+      "installments3": 377202,
+      "installments6": 217370,
       "ram": "8 GB"
     },
     {
@@ -1939,9 +1939,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-a57-5g.webp",
       "publicNotes": "",
-      "priceARS": 855000,
-      "installments3": 390248,
-      "installments6": 224888,
+      "priceARS": 870000,
+      "installments3": 397054,
+      "installments6": 228811,
       "ram": "8 GB"
     },
     {
@@ -1958,9 +1958,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-s25-ultra.webp",
       "publicNotes": "",
-      "priceARS": 1633050,
-      "installments3": 745373,
-      "installments6": 429537,
+      "priceARS": 1661700,
+      "installments3": 758374,
+      "installments6": 437029,
       "ram": "12 GB"
     },
     {
@@ -1977,9 +1977,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-s26.webp",
       "publicNotes": "",
-      "priceARS": 1436400,
-      "installments3": 655616,
-      "installments6": 377813,
+      "priceARS": 1461600,
+      "installments3": 667051,
+      "installments6": 384402,
       "ram": "12 GB"
     },
     {
@@ -1996,9 +1996,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-s26-ultra.webp",
       "publicNotes": "",
-      "priceARS": 1898100,
-      "installments3": 866350,
-      "installments6": 499252,
+      "priceARS": 1931400,
+      "installments3": 881461,
+      "installments6": 507960,
       "ram": "12 GB"
     },
     {
@@ -2015,9 +2015,9 @@
       "offer": false,
       "image": "/assets/products/samsung-galaxy-s26-ultra.webp",
       "publicNotes": "",
-      "priceARS": 2111850,
-      "installments3": 963912,
-      "installments6": 555475
+      "priceARS": 2148900,
+      "installments3": 980724,
+      "installments6": 565163
     },
     {
       "id": "samsung-galaxy-z-fold-8-512gb-nuevo",
@@ -2033,9 +2033,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 2821500,
-      "installments3": 1287817,
-      "installments6": 742132
+      "priceARS": 2871000,
+      "installments3": 1310279,
+      "installments6": 755076
     },
     {
       "id": "redmi-14c-8-256gb-nuevo",
@@ -2051,9 +2051,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 333450,
-      "installments3": 152197,
-      "installments6": 87707,
+      "priceARS": 339300,
+      "installments3": 154851,
+      "installments6": 89236,
       "ram": "8 GB"
     },
     {
@@ -2070,9 +2070,9 @@
       "offer": false,
       "image": "/assets/products/redmi-15c.webp",
       "publicNotes": "",
-      "priceARS": 376200,
-      "installments3": 171709,
-      "installments6": 98951,
+      "priceARS": 382800,
+      "installments3": 174704,
+      "installments6": 100677,
       "ram": "4 GB"
     },
     {
@@ -2089,9 +2089,9 @@
       "offer": false,
       "image": "/assets/products/redmi-15c.webp",
       "publicNotes": "",
-      "priceARS": 376200,
-      "installments3": 171709,
-      "installments6": 98951,
+      "priceARS": 382800,
+      "installments3": 174704,
+      "installments6": 100677,
       "ram": "4 GB"
     },
     {
@@ -2108,9 +2108,9 @@
       "offer": false,
       "image": "/assets/products/redmi-15c.webp",
       "publicNotes": "",
-      "priceARS": 410400,
-      "installments3": 187319,
-      "installments6": 107946,
+      "priceARS": 417600,
+      "installments3": 190586,
+      "installments6": 109829,
       "ram": "8 GB"
     },
     {
@@ -2127,9 +2127,9 @@
       "offer": false,
       "image": "/assets/products/redmi-17.webp",
       "publicNotes": "",
-      "priceARS": 393300,
-      "installments3": 179514,
-      "installments6": 103449,
+      "priceARS": 400200,
+      "installments3": 182645,
+      "installments6": 105253,
       "ram": "4 GB"
     },
     {
@@ -2146,9 +2146,9 @@
       "offer": false,
       "image": "/assets/products/redmi-17.webp",
       "publicNotes": "",
-      "priceARS": 436050,
-      "installments3": 199026,
-      "installments6": 114693,
+      "priceARS": 443700,
+      "installments3": 202498,
+      "installments6": 116694,
       "ram": "4 GB"
     },
     {
@@ -2165,9 +2165,9 @@
       "offer": false,
       "image": "/assets/products/redmi-17.webp",
       "publicNotes": "",
-      "priceARS": 504450,
-      "installments3": 230246,
-      "installments6": 132684,
+      "priceARS": 513300,
+      "installments3": 234262,
+      "installments6": 134998,
       "ram": "6 GB"
     },
     {
@@ -2184,9 +2184,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 495900,
-      "installments3": 226344,
-      "installments6": 130435,
+      "priceARS": 504600,
+      "installments3": 230291,
+      "installments6": 132710,
       "ram": "12 GB"
     },
     {
@@ -2203,9 +2203,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 581400,
-      "installments3": 265368,
-      "installments6": 152924,
+      "priceARS": 591600,
+      "installments3": 269997,
+      "installments6": 155591,
       "ram": "12 GB"
     },
     {
@@ -2222,9 +2222,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15.webp",
       "publicNotes": "",
-      "priceARS": 436050,
-      "installments3": 199026,
-      "installments6": 114693,
+      "priceARS": 443700,
+      "installments3": 202498,
+      "installments6": 116694,
       "ram": "6 GB"
     },
     {
@@ -2241,9 +2241,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15.webp",
       "publicNotes": "",
-      "priceARS": 521550,
-      "installments3": 238051,
-      "installments6": 137182,
+      "priceARS": 530700,
+      "installments3": 242203,
+      "installments6": 139575,
       "ram": "8 GB"
     },
     {
@@ -2260,9 +2260,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15-pro.webp",
       "publicNotes": "",
-      "priceARS": 615600,
-      "installments3": 280978,
-      "installments6": 161920,
+      "priceARS": 626400,
+      "installments3": 285879,
+      "installments6": 164744,
       "ram": "8 GB"
     },
     {
@@ -2279,9 +2279,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15-pro.webp",
       "publicNotes": "",
-      "priceARS": 649800,
-      "installments3": 296588,
-      "installments6": 170915,
+      "priceARS": 661200,
+      "installments3": 301761,
+      "installments6": 173896,
       "ram": "8 GB"
     },
     {
@@ -2298,9 +2298,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15-pro-5g.webp",
       "publicNotes": "",
-      "priceARS": 692550,
-      "installments3": 316101,
-      "installments6": 182160,
+      "priceARS": 704700,
+      "installments3": 321614,
+      "installments6": 185337,
       "ram": "8 GB"
     },
     {
@@ -2317,9 +2317,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15-pro-5g.webp",
       "publicNotes": "",
-      "priceARS": 641250,
-      "installments3": 292686,
-      "installments6": 168666,
+      "priceARS": 652500,
+      "installments3": 297791,
+      "installments6": 171608,
       "ram": "12 GB"
     },
     {
@@ -2336,9 +2336,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15-pro-5g.webp",
       "publicNotes": "",
-      "priceARS": 692550,
-      "installments3": 316101,
-      "installments6": 182160,
+      "priceARS": 704700,
+      "installments3": 321614,
+      "installments6": 185337,
       "ram": "8 GB"
     },
     {
@@ -2355,9 +2355,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15-pro-5g.webp",
       "publicNotes": "",
-      "priceARS": 769500,
-      "installments3": 351223,
-      "installments6": 202400,
+      "priceARS": 783000,
+      "installments3": 357349,
+      "installments6": 205930,
       "ram": "8 GB"
     },
     {
@@ -2374,9 +2374,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15-pro-5g.webp",
       "publicNotes": "",
-      "priceARS": 820800,
-      "installments3": 374638,
-      "installments6": 215893,
+      "priceARS": 835200,
+      "installments3": 381172,
+      "installments6": 219659,
       "ram": "12 GB"
     },
     {
@@ -2393,9 +2393,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-15-pro-plus.webp",
       "publicNotes": "",
-      "priceARS": 906300,
-      "installments3": 413663,
-      "installments6": 238382,
+      "priceARS": 922200,
+      "installments3": 420878,
+      "installments6": 242540,
       "ram": "12 GB"
     },
     {
@@ -2412,9 +2412,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-17.webp",
       "publicNotes": "",
-      "priceARS": 495900,
-      "installments3": 226344,
-      "installments6": 130435,
+      "priceARS": 504600,
+      "installments3": 230291,
+      "installments6": 132710,
       "ram": "4 GB"
     },
     {
@@ -2431,9 +2431,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-17.webp",
       "publicNotes": "",
-      "priceARS": 521550,
-      "installments3": 238051,
-      "installments6": 137182,
+      "priceARS": 530700,
+      "installments3": 242203,
+      "installments6": 139575,
       "ram": "6 GB"
     },
     {
@@ -2450,9 +2450,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-17.webp",
       "publicNotes": "",
-      "priceARS": 547200,
-      "installments3": 249758,
-      "installments6": 143929,
+      "priceARS": 556800,
+      "installments3": 254115,
+      "installments6": 146439,
       "ram": "8 GB"
     },
     {
@@ -2469,9 +2469,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 607050,
-      "installments3": 277076,
-      "installments6": 159671,
+      "priceARS": 617700,
+      "installments3": 281909,
+      "installments6": 162456,
       "ram": "6 GB"
     },
     {
@@ -2488,9 +2488,9 @@
       "offer": false,
       "image": "/assets/products/redmi-note-17-pro-5g.webp",
       "publicNotes": "",
-      "priceARS": 718200,
-      "installments3": 327808,
-      "installments6": 188906,
+      "priceARS": 730800,
+      "installments3": 333526,
+      "installments6": 192201,
       "ram": "8 GB"
     },
     {
@@ -2507,9 +2507,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 820800,
-      "installments3": 374638,
-      "installments6": 215893,
+      "priceARS": 835200,
+      "installments3": 381172,
+      "installments6": 219659,
       "ram": "8 GB"
     },
     {
@@ -2526,9 +2526,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 940500,
-      "installments3": 429272,
-      "installments6": 247377,
+      "priceARS": 957000,
+      "installments3": 436760,
+      "installments6": 251692,
       "ram": "8 GB"
     },
     {
@@ -2545,9 +2545,9 @@
       "offer": false,
       "image": "/assets/products/xiaomi-17t.webp",
       "publicNotes": "",
-      "priceARS": 1128600,
-      "installments3": 515127,
-      "installments6": 296853,
+      "priceARS": 1148400,
+      "installments3": 524112,
+      "installments6": 302030,
       "ram": "12 GB"
     },
     {
@@ -2564,9 +2564,9 @@
       "offer": false,
       "image": "/assets/products/poco-c85.webp",
       "publicNotes": "",
-      "priceARS": 410400,
-      "installments3": 187319,
-      "installments6": 107946,
+      "priceARS": 417600,
+      "installments3": 190586,
+      "installments6": 109829,
       "ram": "8 GB"
     },
     {
@@ -2583,9 +2583,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 453150,
-      "installments3": 206831,
-      "installments6": 119191,
+      "priceARS": 461100,
+      "installments3": 210439,
+      "installments6": 121270,
       "ram": "6 GB"
     },
     {
@@ -2602,9 +2602,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 504450,
-      "installments3": 230246,
-      "installments6": 132684,
+      "priceARS": 513300,
+      "installments3": 234262,
+      "installments6": 134998,
       "ram": "8 GB"
     },
     {
@@ -2621,9 +2621,9 @@
       "offer": false,
       "image": "/assets/products/poco-m8-pro.webp",
       "publicNotes": "",
-      "priceARS": 649800,
-      "installments3": 296588,
-      "installments6": 170915,
+      "priceARS": 661200,
+      "installments3": 301761,
+      "installments6": 173896,
       "ram": "8 GB"
     },
     {
@@ -2640,9 +2640,9 @@
       "offer": false,
       "image": "/assets/products/poco-m8-pro.webp",
       "publicNotes": "",
-      "priceARS": 701100,
-      "installments3": 320003,
-      "installments6": 184409,
+      "priceARS": 713400,
+      "installments3": 325585,
+      "installments6": 187625,
       "ram": "12 GB"
     },
     {
@@ -2659,9 +2659,9 @@
       "offer": false,
       "image": "/assets/products/poco-x8-pro.webp",
       "publicNotes": "",
-      "priceARS": 743850,
-      "installments3": 339515,
-      "installments6": 195653,
+      "priceARS": 756900,
+      "installments3": 345437,
+      "installments6": 199066,
       "ram": "8 GB"
     },
     {
@@ -2678,9 +2678,9 @@
       "offer": false,
       "image": "/assets/products/poco-x8-pro.webp",
       "publicNotes": "",
-      "priceARS": 820800,
-      "installments3": 374638,
-      "installments6": 215893,
+      "priceARS": 835200,
+      "installments3": 381172,
+      "installments6": 219659,
       "ram": "8 GB"
     },
     {
@@ -2697,9 +2697,9 @@
       "offer": false,
       "image": "/assets/products/poco-x8-pro.webp",
       "publicNotes": "",
-      "priceARS": 923400,
-      "installments3": 421467,
-      "installments6": 242880,
+      "priceARS": 939600,
+      "installments3": 428819,
+      "installments6": 247116,
       "ram": "12 GB"
     },
     {
@@ -2716,9 +2716,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 59850,
-      "installments3": 27317,
-      "installments6": 15742
+      "priceARS": 60900,
+      "installments3": 27794,
+      "installments6": 16017
     },
     {
       "id": "cargador-original-carga-rapida-45w-nuevo",
@@ -2734,9 +2734,9 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 85500,
-      "installments3": 39025,
-      "installments6": 22489
+      "priceARS": 87000,
+      "installments3": 39705,
+      "installments6": 22881
     },
     {
       "id": "ps5-digital-825-gb-nuevo",
@@ -2752,13 +2752,13 @@
       "offer": false,
       "image": "",
       "publicNotes": "",
-      "priceARS": 1453500,
-      "installments3": 663421,
-      "installments6": 382310
+      "priceARS": 1479000,
+      "installments3": 674992,
+      "installments6": 388979
     }
   ],
   "sourceLabel": "Actualizada · 20/11/2026",
-  "checkedAt": "2026-11-24T22:40:46.139Z",
+  "checkedAt": "2026-11-25T16:28:18.183Z",
   "live": false,
   "sourceMode": "scheduled-sheet"
 }
