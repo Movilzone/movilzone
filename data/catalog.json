@@ -19,24 +19,6 @@
       "installments6": null
     },
     {
-      "id": "iphone-15-128gb-usado-unidades-seleccionadas",
-      "brand": "Apple",
-      "model": "iPhone 15",
-      "capacity": "128 GB",
-      "color": "",
-      "state": "usado",
-      "battery": null,
-      "price": 470,
-      "currency": "USD",
-      "availability": "consultar",
-      "offer": true,
-      "image": "/assets/products/iphone-15.webp",
-      "publicNotes": "Oferta sujeta a disponibilidad. Consultá condiciones y estado de cada equipo. Unidades seleccionadas.",
-      "priceARS": null,
-      "installments3": null,
-      "installments6": null
-    },
-    {
       "id": "iphone-16-128gb-usado-unidades-seleccionadas",
       "brand": "Apple",
       "model": "iPhone 16",
@@ -188,15 +170,15 @@
       "color": "",
       "state": "usado",
       "battery": null,
-      "price": 520,
+      "price": 550,
       "currency": "USD",
       "availability": "consultar",
       "offer": false,
       "image": "/assets/products/iphone-13-pro-max.webp",
       "publicNotes": "",
-      "priceARS": 894400,
-      "installments3": 408217,
-      "installments6": 235244
+      "priceARS": 946000,
+      "installments3": 431768,
+      "installments6": 248816
     },
     {
       "id": "iphone-13-pro-max-512gb-usado",
@@ -2758,7 +2740,7 @@
     }
   ],
   "sourceLabel": "Actualizada · 20/11/2026",
-  "checkedAt": "2026-11-25T21:55:11.740Z",
+  "checkedAt": "2026-11-26T16:26:56.153Z",
   "live": false,
   "sourceMode": "scheduled-sheet"
 }
