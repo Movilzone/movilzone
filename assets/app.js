@@ -11,7 +11,7 @@
 
   const brandFilters = { apple: 'Apple', samsung: 'Samsung', motorola: 'Motorola', xiaomi: 'Xiaomi' };
   const filterNames = {
-    macbook: 'una MacBook', ipad: 'un iPad', airpods: 'AirPods', android: 'un Android',
+    watch: 'un Apple Watch', macbook: 'una MacBook', ipad: 'un iPad', airpods: 'AirPods', android: 'un Android',
     iphone: 'un iPhone', all: 'un equipo', apple: 'un iPhone nuevo', used: 'un iPhone usado',
     asis: 'un iPhone ASIS o activado', samsung: 'un Samsung', motorola: 'un Motorola', xiaomi: 'un Xiaomi'
   };
@@ -89,6 +89,7 @@
        filter === 'asis' ? p.brand === 'Apple' && ['asis', 'activado'].includes(p.state) :
        filter === 'macbook' ? p.model.startsWith('MacBook') :
        filter === 'ipad' ? p.model.startsWith('iPad') :
+       filter === 'watch' ? p.model.startsWith('Apple Watch') :
        filter === 'airpods' ? p.model.startsWith('AirPods') :
        filter === 'android' ? p.brand !== 'Apple' :
        filter === 'iphone' ? p.model.startsWith('iPhone') :
@@ -178,7 +179,7 @@
       ${variants.length > 1 ? `<label class="variant-label" for="product-variant">Elegí capacidad y color</label><select class="variant-select" id="product-variant">${variants.map(v => `<option value="${escape(v.id)}" ${v.id === p.id ? 'selected' : ''}>${escape(specs(v) || v.model)} — ${money(v)}</option>`).join('')}</select>` : ''}
       ${colors.length > 1 ? `<label class="variant-label" for="product-color">Color</label><select class="variant-select" id="product-color">${colors.map(c => `<option ${c === chosen ? 'selected' : ''} value="${escape(c)}">${escape(c)}</option>`).join('')}</select>` : ''}
       <dl class="detail-specs">
-        ${p.capacity ? `<div><dt>Capacidad</dt><dd>${escape(p.capacity)}</dd></div>` : ''}
+        ${p.capacity ? `<div><dt>${p.model.startsWith('Apple Watch') ? 'Tamaño y correa' : 'Capacidad'}</dt><dd>${escape(p.capacity)}</dd></div>` : ''}
         ${!p.model.startsWith('AirPods') ? `<div><dt>Color</dt><dd>${escape(p.color || 'Consultar')}</dd></div>` : ''}
         ${p.state === 'usado' ? `<div><dt>Batería</dt><dd>${p.battery !== null && p.battery !== undefined ? escape(p.battery) + '%' : 'Consultar'}</dd></div>` : ''}
         ${p.ram ? `<div><dt>Memoria RAM</dt><dd>${escape(p.ram)}</dd></div>` : ''}

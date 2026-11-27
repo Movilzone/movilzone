@@ -56,3 +56,16 @@ test('separa colores en español del modelo sin alterar precios ni inventar vari
   const p=products.find(p=>p.model===model&&p.price===price);assert.ok(p,model);assert.equal(p.color,color);
  }
 });
+
+test('separa los colores compuestos de Apple Watch sin cambiar sus importes',()=>{
+ const csv=[head,...rows,
+ 'APPLE WATCH SERIES 11 JET BLACK,46MM,445,758725,346311,199569,SELLADO,DISPONIBLE',
+ 'APPLE WATCH SERIES 12 LIGHT GOLD,42MM,495,,,,SELLADO,DISPONIBLE',
+ 'APPLE WATCH SERIES 12 BRONZE / GRAY / JET BLACK,46MM,545,,,,SELLADO,DISPONIBLE',
+ 'APPLE WATCH SE 3 STARLIGHT,40MM,325,,,,SELLADO,DISPONIBLE',
+ 'IPHONE 17 OTROS COLORES,256GB,1060,,,,SELLADO,DISPONIBLE'].join('\n');
+ const p=liveCatalog(csv,baseline).products.slice(-5);
+ assert.deepEqual(p.map(v=>[v.model,v.color,v.price]),[
+ ['Apple Watch Series 11','Jet Black',445],['Apple Watch Series 12','Light Gold',495],['Apple Watch Series 12','Bronze / Gray / Jet Black',545],['Apple Watch SE 3','Starlight',325],['iPhone 17','Otros Colores',1060]]);
+ assert.equal(p[0].priceARS,758725);assert.equal(p[0].installments3,346311);assert.equal(p[0].capacity,'46MM');
+});

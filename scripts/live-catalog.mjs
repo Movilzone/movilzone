@@ -11,9 +11,10 @@ export function liveCatalog(csv,baseline,modelImages={}){
  for(const r of rows.slice(header+1)){
   const [name,detail,usd,ars,q3,q6,category]=r;if(!categories[category]||!name||String(name).startsWith('REDMI PAD'))continue;
   const price=amount(usd);if(!price)continue;
-  const parts=name.split(' · '),raw=colorNames(parts[0]).replace(/\s*\.\s*AS\s*IS\s*$/i,'').replace(/\s+TODOS LOS COLORES\s*$/i,'').trim();const colorMatch=raw.match(/\s(SKY BLUE|LIGHT BLUE|AWESOME CHARCOAL|CHARCOAL|GOLD CYPRESS|BLACK|WHITE|BLUE|SILVER|SAGE|LAVENDER|ORANGE|GLACIER|BURGUNDY|GREY|GRAY|PINK|GREEN|PURPLE|GOLD|CITRUS|INDIGO|BLUSH|MIDNIGHT|SPACE|STARLIGHT|NAVY|VIOLET|CHERRY|SPELLBOUND|TEAL)\b/i);
+  const parts=name.split(' · '),raw=colorNames(parts[0]).replace(/\s*\.\s*AS\s*IS\s*$/i,'').replace(/\s+TODOS LOS COLORES\s*$/i,'').trim();const colorMatch=raw.match(/\s(JET BLACK|LIGHT GOLD|BRONZE|OTROS COLORES|SKY BLUE|LIGHT BLUE|AWESOME CHARCOAL|CHARCOAL|GOLD CYPRESS|BLACK|WHITE|BLUE|SILVER|SAGE|LAVENDER|ORANGE|GLACIER|BURGUNDY|GREY|GRAY|PINK|GREEN|PURPLE|GOLD|CITRUS|INDIGO|BLUSH|MIDNIGHT|SPACE|STARLIGHT|NAVY|VIOLET|CHERRY|SPELLBOUND|TEAL)\b/i);
   const modelText=(colorMatch?raw.slice(0,colorMatch.index):raw).trim();
   let model=known.find(m=>norm(m)===norm(modelText))||modelText.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()).replace(/^Iphone/,'iPhone').replace(/^Ipad/,'iPad').replace(/^Macbook/,'MacBook').replace(/^Airpods/,'AirPods').replace(/Poco/g,'POCO').replace(/\b5g\b/g,'5G').replace(/17t\b/g,'17T');
+  model=model.replace(/\bSe\b/g,'SE').replace(/\b(\d+)e\b/g,'$1E');
   model=model.replace(/\b5g\b/gi,'5G').replace(/17t\b/gi,'17T');
   const color=colorMatch?raw.slice(colorMatch.index).trim().toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()):'';
 

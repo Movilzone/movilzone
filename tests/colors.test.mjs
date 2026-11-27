@@ -42,10 +42,21 @@ test('color desconocido no muestra una foto de otro color',()=>{
  const prior=p.color;p.color='Color sin foto';
  try{const html=boot('#producto/'+p.id).node('product-detail').innerHTML;assert.ok(html.includes('Foto del color Color sin foto no disponible'));assert.ok(!html.includes('<img'));}finally{p.color=prior;}
 });
-test('todas las variantes actuales tienen fotografía de su color',()=>{
+test('variantes usan foto de su color o avisan cuando falta, sin sustituir otro color',()=>{
  const key=s=>s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'');
  for(const p of catalog.products)for(const color of String(p.color||'').split('/').map(s=>s.trim()).filter(Boolean)){
- const variants=Object.entries(colorImages).find(([name])=>key(name)===key(p.model))?.[1];
- assert.ok(variants&&Object.keys(variants).some(c=>key(c)===key(color)),p.model+' '+color);
+  const variants=Object.entries(colorImages).find(([name])=>key(name)===key(p.model))?.[1];
+  const image=variants&&Object.entries(variants).find(([c])=>key(c)===key(color))?.[1];
+  const html=boot('#producto/'+p.id+'/'+encodeURIComponent(color)).node('product-detail').innerHTML;
+  if(image)assert.ok(html.includes(image.replace(/^\//,'')),p.model+' '+color);
+  else{assert.ok(html.includes('Foto del color '+color+' no disponible'),p.model+' '+color);assert.ok(!html.includes('<img'),p.model+' '+color);}
  }
+});
+test('Apple Watch tiene filtro propio y muestra tamaño y correa',()=>{
+ const base={brand:'Apple',state:'nuevo',capacity:'46MM',currency:'USD',color:'Jet Black',image:'',price:445};
+ const watch={...base,id:'watch-test',model:'Apple Watch Series 11'};
+ const other={...base,id:'phone-test',model:'iPhone 16'};
+ const sample={products:[watch,other]};
+ const app=boot('#equipos/watch',sample);assert.ok(app.node('product-grid').innerHTML.includes(watch.model));assert.ok(!app.node('product-grid').innerHTML.includes(other.model));
+ assert.ok(boot('#producto/'+watch.id,sample).node('product-detail').innerHTML.includes('Tamaño y correa'));
 });
